@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏥 Smart Clinic
+# 🏥 Smart Clinic 2027
 
 **نظام إدارة عيادات طبية — تطبيق سطح مكتب**
 
@@ -10,7 +10,7 @@
 [![Database](https://img.shields.io/badge/Database-SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)](https://www.sqlite.org)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-[العربية](#العربية) · [English](#english)
+[العربية](#العربية) · [English](#english) · [دليل المطور 🛡️](#-دليل-المطور--تعديل-آمن-بدون-مشاكل-مسبقة)
 
 </div>
 
@@ -28,7 +28,7 @@
 
 ### 📋 عن المشروع
 
-**Smart Clinic** نظام إدارة متكامل للعيادات الطبية، يعمل على أجهزة سطح المكتب بنظام Windows. صُمّم ليكون **عاماً لأي تخصص طبي** — عيادة عامة، أسنان، أطفال، جلدية، أو أي تخصص آخر — دون الحاجة لتعديل الكود.
+**Smart Clinic 2027** نظام إدارة متكامل للعيادات الطبية، يعمل على أجهزة سطح المكتب بنظام Windows. صُمّم ليكون **عاماً لأي تخصص طبي** — عيادة عامة، أسنان، أطفال، جلدية، أو أي تخصص آخر — دون الحاجة لتعديل الكود.
 
 يهدف النظام إلى استبدال الدفاتر الورقية والملفات المتفرقة بحل رقمي واحد ينظّم بيانات المرضى والمواعيد والسجلات الطبية والفواتير، مع نظام صلاحيات يحدّد ما يمكن لكل مستخدم رؤيته أو تعديله.
 
@@ -85,60 +85,219 @@
 
 | التقنية | الاستخدام |
 |---|---|
-| **Flutter** | بناء واجهة المستخدم |
+| **Flutter 3.47.5 (stable)** | بناء واجهة المستخدم |
 | **Dart** | لغة البرمجة |
-| **sqflite / sqflite_common_ffi** | قاعدة بيانات SQLite المحلية |
-| **path_provider / path** | تحديد مسارات قاعدة البيانات |
+| **sqflite_common_ffi** | قاعدة بيانات SQLite المحلية |
+| **window_manager** | إدارة نافذة Windows |
+| **provider** | إدارة الحالة |
+| **Inno Setup 6+** | إنشاء مثبّت Windows |
 | **GitHub Actions** | بناء تلقائي لنسخة Windows |
+
+---
+
+<a name="-دليل-المطور--تعديل-آمن-بدون-مشاكل-مسبقة"></a>
+
+## 🛡️ دليل المطور — تعديل آمن بدون مشاكل مسبقة
+
+> **اقرأ هذا القسم كاملاً قبل أي تعديل. يمنع 90% من الأخطاء الشائعة.**
+
+### 1) المتطلبات الحقيقية (مثبتة من `.metadata`)
+
+المشروع مبني على:
+- **Flutter 3.47.5 channel stable** (revision `6a19cca`)
+- **Windows 10/11 64-bit**
+- **Visual Studio 2022** مع `Desktop development with C++`
+
+```bash
+# تأكد قبل أي شيء
+flutter --version
+flutter doctor -v
+# يجب أن ترى Visual Studio + Windows مثبتين بعلامة ✔
+```
+
+> ⚠️ لا تحدّث Flutter لنسخة أحدث بدون اختبار كامل `flutter test` + `flutter analyze`. التحديث قد يكسر `window_manager` أو `sqflite_common_ffi`.
+
+### 2) التشغيل لأول مرة (بعد الـ clone)
+
+```bash
+git clone https://github.com/khaledction/smart-clinic-2027.git
+cd smart-clinic-2027
+
+flutter pub get
+flutter analyze
+flutter test
+flutter run -d windows
+```
+
+إذا فشل `flutter pub get`:
+```bash
+flutter clean
+flutter pub get
+```
+
+### 3) القاعدة الذهبية قبل أي تعديل
+
+**لا تعدّل أبداً على `main` مباشرة. اعمل فرع:**
+
+```bash
+git checkout main
+git pull origin main
+git checkout -b feat/اسم-الميزة
+# ... عدّل ...
+git add .
+git commit -m "feat: وصف واضح"
+git push -u origin feat/اسم-الميزة
+```
+
+ثم افتح Pull Request على GitHub. هذا يحميك من ضياع الكود ويسمح بالمراجعة.
+
+**وقبل أي تعديل على قاعدة البيانات:**
+```bash
+# انسخ قاعدة البيانات الحالية
+# تجدها في: D:\myclinic\ أو C:\myclinic\ أو %APPDATA%
+# احتفظ بنسخة خارج المشروع
+```
+
+### 4) قواعد قاعدة البيانات — الأخطر!
+
+المشروع يستخدم **schema version = 6** (انظر `lib/core/database/app_database.dart`)
+
+- **ممنوع حذف جدول أو عمود مستخدم** — اعمل migration بإضافة عمود nullable أو جدول جديد
+- عند أي تغيير في الجداول، ارفع `schemaVersion` +1 واكتب `onUpgrade` يحافظ على البيانات القديمة
+- اختبر الترقية: ثبّت النسخة القديمة، أدخل بيانات، ثم ثبّت نسختك الجديدة وتأكد البيانات لم تضيع
+- لا تغيّر `lib/main.dart` تهيئة `AppDatabase.initForDesktop()` بدون فهم
+
+```dart
+// مثال آمن لإضافة عمود
+onUpgrade: (db, oldVersion, newVersion) async {
+  if (oldVersion < 7) {
+    await db.execute('ALTER TABLE patients ADD COLUMN new_field TEXT');
+  }
+}
+```
+
+### 5) البناء والمثبّت
+
+```bash
+# بناء الإصدار
+flutter build windows --release
+# الناتج: build/windows/x64/runner/Release/
+
+# إنشاء المثبّت (يتطلب Inno Setup)
+# افتح Smart_Clinic_Setup.iss في Inno Setup واضغط Build > Compile
+# الناتج: Output/Smart_Clinic_Setup_v2.0.exe
+```
+
+> ملاحظة: `Smart_Clinic_Setup.iss` يحتوي مسارات fallback متعددة لـ `SourceFolder`. لو بنيت في مسار مختلف عن `E:\projects\...` سيعمل تلقائياً.
+
+### 6) سير العمل اليومي الموصى به
+
+```bash
+# بداية اليوم
+git checkout main && git pull origin main
+git checkout -b fix/اصلاح-كذا
+
+# أثناء العمل - احفظ كل ساعة
+git add -A
+git commit -m "wip: تقدم في ..."
+
+# قبل الدفع - افحص
+flutter analyze   # يجب أن يكون بدون أخطاء
+flutter test      # كل الاختبارات خضراء (36 اختبار حالياً)
+
+# ادفع
+git push
+```
+
+### 7) ما لا ترفعه أبداً إلى GitHub
+
+`.gitignore` الحالي يمنع هذه تلقائياً:
+
+| ممنوع رفعه | السبب |
+|---|---|
+| `build/` , `.dart_tool/` , `build/windows/` | مخرجات بناء - ضخمة |
+| `.env` , `*.jks` , `*.keystore` , `android/key.properties` | مفاتيح سرية |
+| `D:\myclinic\*.db` , `*.db` , `backups/` | بيانات مرضى حقيقية |
+| `Output/*.exe` , `*.zip` , `*.rar` | ملفات تثبيت - ارفعها كـ Release فقط |
+| `android/local.properties` | مسارات محلية |
+
+> **تحذير خصوصية:** مجلدات النسخ الاحتياطي `D:\myclinic\backups` قد تحتوي بيانات مرضى. لا ترفعها أبداً.
+
+### 8) حلول سريعة لأشهر المشاكل
+
+| المشكلة | الحل |
+|---|---|
+| `flutter run` يعطي خطأ C++ | ثبّت Visual Studio 2022 + Desktop development with C++ وأعد `flutter doctor` |
+| `sqflite` خطأ في Windows | تأكد من `sqflite_common_ffi` في `pubspec.yaml` و `AppDatabase.initForDesktop()` يُستدعى أولاً |
+| النافذة لا تظهر / بيضاء | احذف `build/` ثم `flutter clean && flutter pub get && flutter run -d windows` |
+| تعارض مواعيد لا يُكشف | لا تغيّر منطق `AppointmentRepository` بدون تشغيل `flutter test` |
+| المثبّت لا يجد الـ exe | ابنِ أولاً `flutter build windows --release` ثم افتح الـ iss |
+| `git push` مرفوض | `git pull --rebase origin main` ثم `git push` |
+| قاعدة البيانات اختفت بعد التحديث | راجع PATIENT_FILE_V6.md - المثبّت لا يمس `D:\myclinic` إذا التزمت بـ migration الصحيح |
+
+### 9) الاختبارات قبل كل Push
+
+```bash
+flutter analyze   # صفر Issues
+flutter test      # 36 passed
+flutter build windows --release  # يبني بدون أخطاء
+```
+
+إذا كسرت اختباراً، لا تدفع حتى تصلحه.
+
+### 10) الإصدارات والتحديثات التراكمية
+
+- كل تحديث V1..V6 كان **تراكمي** — المثبّت الجديد يقبل بيانات V1-V5
+- حافظ على هذا: أي V7 يجب أن يقبل بيانات V6 وما قبلها
+- وثّق كل إصدار في `PATIENT_FILE_V6.md` (انسخه إلى `PATIENT_FILE_V7.md` للتحديث القادم) واذكر: ما تغيّر، التوافق، طريقة التثبيت، وطريقة الرجوع
 
 ---
 
 ### ⚙️ المتطلبات
 
-- **Flutter** 3.x أو أحدث
-- **Dart** 3.x أو أحدث
+- **Flutter** 3.47.5 (stable) — نفس نسخة `.metadata`
+- **Dart** 3.x
 - **Windows** 10 / 11 (64-bit)
-- **Visual Studio 2022** مع عبء العمل *Desktop development with C++* (للبناء والتشغيل على Windows)
+- **Visual Studio 2022** مع عبء العمل *Desktop development with C++*
 
-للتحقق من بيئتك:
+للتحقق:
 ```bash
 flutter doctor -v
 ```
 
 ---
 
-### 🚀 التشغيل
+### 🚀 التشغيل السريع
 
 ```bash
-# 1. استنساخ المستودع
-git clone https://github.com/khaledction/smart-clinic.git
-cd smart-clinic
+# 1. استنساخ
+git clone https://github.com/khaledction/smart-clinic-2027.git
+cd smart-clinic-2027
 
 # 2. تثبيت الحزم
 flutter pub get
 
-# 3. تشغيل التطبيق
+# 3. تشغيل
 flutter run -d windows
 ```
 
 ---
 
-### 📦 بناء نسخة إصدار (Release)
+### 📦 بناء نسخة إصدار
 
 ```bash
 flutter build windows --release
+# الناتج: build\windows\x64\runner\Release\
 ```
 
-الملف التنفيذي الناتج:
-```
-build\windows\x64\runner\Release\
-```
+لإنشاء المثبّت: افتح `Smart_Clinic_Setup.iss` في **Inno Setup 6** > Compile
 
 ---
 
 ### 🧪 الاختبارات
 
 ```bash
+flutter analyze
 flutter test
 ```
 
@@ -147,59 +306,70 @@ flutter test
 ### 📁 بنية المشروع
 
 ```
-smart-clinic/
+smart-clinic-2027/
 ├── lib/
 │   ├── core/
 │   │   ├── database/          # تهيئة قاعدة البيانات والبيانات الأولية
-│   │   └── widgets/           # مكونات واجهة مشتركة (حالات، نوافذ تأكيد)
+│   │   ├── services/          # DeviceActivation, AppFolders, AutoBackup
+│   │   ├── theme/             # AppTheme
+│   │   └── widgets/           # AppShell, WindowControls, FrameTrail
 │   ├── data/
-│   │   ├── models/            # نماذج البيانات (مريض، مستخدم، موعد...)
-│   │   └── repositories/      # طبقة الوصول إلى قاعدة البيانات
-│   └── ...
+│   │   ├── models/            # Patient, Appointment, Visit...
+│   │   ├── providers/         # Session, Patients, Appointments, Settings
+│   │   └── repositories/      # PatientRepository, AppointmentRepository...
+│   ├── features/
+│   │   ├── activation/        # شاشة التفعيل
+│   │   ├── login/             # تسجيل الدخول
+│   │   └── ...                # باقي الشاشات
+│   └── main.dart              # نقطة الانطلاق + WindowManager + RTL
 ├── assets/
 │   └── images/                # صور التطبيق
-├── test/                      # الاختبارات
-├── windows/                   # ملفات منصة Windows
-└── .github/workflows/         # البناء التلقائي
+├── test/                      # 36 اختبار
+├── windows/                   # إعدادات Windows
+├── installer/ / tools/        # أدوات التثبيت
+├── Smart_Clinic_Setup.iss     # سكربت Inno Setup
+├── PATIENT_FILE_V6.md         # توثيق التحديث الحالي
+└── .github/workflows/         # بناء تلقائي Windows
 ```
 
 ---
 
 ### 🔒 الخصوصية وأمن البيانات
 
-- جميع البيانات مخزّنة **محلياً** على جهاز العيادة (SQLite)
+- جميع البيانات مخزّنة **محلياً** على جهاز العيادة (SQLite في `D:\myclinic` أو `C:\myclinic`)
 - **لا يُرسل أي شيء إلى الإنترنت**
-- يُنصح بنسخ احتياطي دوري لملف قاعدة البيانات
+- النسخ الاحتياطي التلقائي يعمل عبر `AutoBackup` - لا تعتمد عليه وحده، انسخ يدوياً قبل أي تحديث
 - كلمات المرور لا تُعرض في أي واجهة
 
 ---
 
 ### 🗺 خارطة الطريق
 
-- [ ] نسخ احتياطي تلقائي لقاعدة البيانات
-- [ ] تذكير بالمواعيد قبل موعدها
+- [x] نظام مواعيد كامل مع كشف التعارض
+- [x] زيارات اليوم المنجزة + فرز
+- [x] ترويسات موحدة + تجربة RTL كاملة
+- [ ] ربط المالية بالزيارات المنجزة
+- [ ] نسخ احتياطي تلقائي مجدول
 - [ ] تصدير التقارير إلى PDF و Excel
-- [ ] طباعة السجل الطبي
-- [ ] دعم منصات إضافية (Android · Web)
-- [ ] إدارة أكثر من عيادة في نفس النظام
+- [ ] تذكير بالمواعيد
+- [ ] دعم Android / Web
 
 ---
 
 ### 🤝 المساهمة
 
-المساهمات مرحّب بها:
+1. Fork للمستودع
+2. أنشئ فرعاً: `git checkout -b feat/my-feature`
+3. `flutter analyze && flutter test` قبل الـ commit
+4. `git push` وافتح Pull Request
 
-1. اعمل Fork للمستودع
-2. أنشئ فرعاً: `git checkout -b feature/new-feature`
-3. نفّذ تغييراتك واعمل commit
-4. ارفع: `git push origin feature/new-feature`
-5. افتح Pull Request
+راجع [CONTRIBUTING.md](CONTRIBUTING.md) للتفاصيل.
 
 ---
 
 ### 📄 الترخيص
 
-هذا المشروع مرخّص بموجب [MIT License](LICENSE).
+[MIT License](LICENSE)
 
 ---
 
@@ -207,9 +377,10 @@ smart-clinic/
 
 **khaledction** — [GitHub](https://github.com/khaledction)
 
-للإبلاغ عن مشكلة أو اقتراح ميزة: [Issues](https://github.com/khaledction/smart-clinic/issues)
+للإبلاغ عن مشكلة: [Issues](https://github.com/khaledction/smart-clinic-2027/issues)
 
 ---
+
 ---
 
 <a name="english"></a>
@@ -218,187 +389,83 @@ smart-clinic/
 
 ### 📋 About
 
-**Smart Clinic** is a complete clinic management system for Windows desktops, built with Flutter. It is designed to be **specialty-agnostic** — suitable for general practice, dental, pediatric, dermatology, or any other clinic type — with no code changes required.
+**Smart Clinic 2027** is a complete clinic management system for Windows desktops, built with Flutter 3.47.5. It is **specialty-agnostic** — suitable for general practice, dental, pediatric, dermatology, or any clinic type — with no code changes required.
 
-It replaces paper records and scattered files with a single digital solution that organizes patient data, appointments, medical records, and billing, with a role-based permission system controlling what each user can see or modify.
-
-The app runs **entirely offline** on a local SQLite database, so patient data never leaves the clinic.
-
----
+It replaces paper records with a single digital solution for patients, appointments, medical records, and billing, with role-based permissions. Runs **entirely offline** on SQLite — patient data never leaves the clinic.
 
 ### ✨ Features
 
-#### 👥 Patient Management
-- Add, edit, and archive patient records
-- Instant search by name, phone, or file number
-- Full patient profile: personal data, medical history, allergies
-
-#### 📅 Appointments
-- Daily / weekly scheduling
-- Visual status per appointment: **Upcoming · In Progress · Completed · Cancelled**
-- Conflict detection before saving
-- Today's appointments on the home screen
-
-#### 🩺 Medical Records
-- Complete visit history per patient, sorted chronologically
-- Diagnosis, notes, and prescription per visit
-- Review history before starting an examination
-
-#### 💰 Billing & Payments
-- Invoices linked to visits
-- Payment status: **Paid · Partially Paid · Unpaid**
-- Daily and monthly revenue calculation
-- Invoice printing
-
-#### 📊 Reports & Statistics
-- Daily and monthly visit / revenue reports
-- Peak hours and busiest days
-- Overall clinic activity statistics
-
-#### 🔐 Users & Permissions
-- Password-protected login
-- Multiple roles: **Admin · Doctor · Secretary**
-- Per-role permissions
-- User account management
-
-#### 🎨 User Experience
-- Full Arabic interface with RTL support
-- Colour-coded status chips and clear empty states
-- Confirmation dialogs before destructive actions
-- Ready-to-use demo data
-
----
+- **Patient Management** — CRUD + instant search + archiving
+- **Appointments** — daily/weekly view, status chips, conflict detection
+- **Medical Records** — chronological visit history, diagnosis & prescriptions
+- **Billing** — invoices linked to visits, paid/partial/unpaid, revenue reports
+- **Reports** — daily/monthly visits & revenue, peak hours
+- **Users & Permissions** — Admin/Doctor/Secretary roles
+- **UX** — Full Arabic RTL, color-coded chips, confirmation dialogs, demo data
 
 ### 🛠 Tech Stack
 
 | Technology | Purpose |
 |---|---|
-| **Flutter** | UI framework |
-| **Dart** | Programming language |
-| **sqflite / sqflite_common_ffi** | Local SQLite database |
-| **path_provider / path** | Database path resolution |
-| **GitHub Actions** | Automated Windows build |
+| Flutter 3.47.5 stable | UI |
+| Dart | Language |
+| sqflite_common_ffi | Local SQLite |
+| window_manager | Window handling |
+| provider | State management |
+| Inno Setup 6 | Windows installer |
+| GitHub Actions | CI |
 
----
+### 🛡️ Developer Guide — Safe Editing
+
+1. **Never edit `main` directly** — create a feature branch
+2. **DB rule:** bump `schemaVersion` and write `onUpgrade` that preserves old data
+3. **Before pushing:** `flutter analyze && flutter test && flutter build windows --release`
+4. **Never commit:** `build/`, `.dart_tool/`, `*.db`, `*.env`, `Output/*.exe`
+5. Back up `D:\myclinic\` before any DB change
+
+See Arabic developer guide above for full details.
 
 ### ⚙️ Requirements
 
-- **Flutter** 3.x or later
-- **Dart** 3.x or later
-- **Windows** 10 / 11 (64-bit)
-- **Visual Studio 2022** with the *Desktop development with C++* workload
+- Flutter 3.47.5 stable, Dart 3.x, Windows 10/11 64-bit, Visual Studio 2022 (Desktop C++)
 
-Verify your setup with:
 ```bash
 flutter doctor -v
 ```
 
----
-
 ### 🚀 Getting Started
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/khaledction/smart-clinic.git
-cd smart-clinic
-
-# 2. Install dependencies
+git clone https://github.com/khaledction/smart-clinic-2027.git
+cd smart-clinic-2027
 flutter pub get
-
-# 3. Run the app
 flutter run -d windows
 ```
 
----
-
-### 📦 Build a Release
+### 📦 Build
 
 ```bash
 flutter build windows --release
+# Output: build\windows\x64\runner\Release\
 ```
-
-Output:
-```
-build\windows\x64\runner\Release\
-```
-
----
 
 ### 🧪 Testing
 
 ```bash
+flutter analyze
 flutter test
 ```
 
----
+### 🔒 Privacy
 
-### 📁 Project Structure
-
-```
-smart-clinic/
-├── lib/
-│   ├── core/
-│   │   ├── database/          # Database setup and seed data
-│   │   └── widgets/           # Shared UI components
-│   ├── data/
-│   │   ├── models/            # Data models (patient, user, appointment...)
-│   │   └── repositories/      # Data access layer
-│   └── ...
-├── assets/
-│   └── images/                # App images
-├── test/                      # Tests
-├── windows/                   # Windows platform files
-└── .github/workflows/         # CI configuration
-```
-
----
-
-### 🔒 Privacy & Security
-
-- All data is stored **locally** on the clinic machine (SQLite)
-- **Nothing is transmitted over the internet**
-- Regular database backups are recommended
-- Passwords are never displayed in the UI
-
----
-
-### 🗺 Roadmap
-
-- [ ] Automatic database backup
-- [ ] Appointment reminders
-- [ ] Export reports to PDF and Excel
-- [ ] Print medical records
-- [ ] Support for additional platforms (Android · Web)
-- [ ] Multi-clinic support
-
----
-
-### 🤝 Contributing
-
-Contributions are welcome:
-
-1. Fork the repository
-2. Create a branch: `git checkout -b feature/new-feature`
-3. Commit your changes
-4. Push: `git push origin feature/new-feature`
-5. Open a Pull Request
-
----
+All data stored locally (SQLite). Nothing sent to internet.
 
 ### 📄 License
 
-Released under the [MIT License](LICENSE).
-
----
-
-### 👨‍💻 Developer
-
-**khaledction** — [GitHub](https://github.com/khaledction)
-
-Report a bug or request a feature: [Issues](https://github.com/khaledction/smart-clinic/issues)
+[MIT License](LICENSE)
 
 ---
 
 <div align="center">
-صُنع بـ ❤️ باستخدام Flutter
+صُنع بـ ❤️ باستخدام Flutter — جاهز للتطوير الآمن بدون مشاكل مسبقة
 </div>

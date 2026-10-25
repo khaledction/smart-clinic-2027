@@ -1,0 +1,21 @@
+# Smart Clinic 2027 - يمنع مشاكل نهايات الأسطر بين Windows/Linux
+* text=auto eol=lf
+*.dart text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.iss text eol=lf
+*.ps1 text eol=lf
+*.bat text eol=crlf
+
+# الصور والخطوط - لا تلمسها
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.ttf binary
+*.otf binary
+*.exe binary
+*.dll binary
+*.db binary
