@@ -1,0 +1,70 @@
+﻿name: neuro_clinic
+description: "نظام إدارة عيادة أعصاب — Flutter لسطح المكتب (Windows)، واجهة عربية RTL، قاعدة بيانات SQLite محلية."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.13.0 <4.0.0"
+  flutter: ">=3.47.0"
+
+# =============================================================================
+#  ملاحظة للمطوّر: كل الحزم هنا مختارة لتعمل على سطح المكتب (Windows/Linux/macOS)
+#  لا توجد أي حزمة تعتمد على خدمة سحابية — كل البيانات تبقى داخل ملف SQLite محلي.
+# =============================================================================
+dependencies:
+  pdf: ^3.11.3
+  printing: ^5.14.2
+  flutter:
+    sdk: flutter
+  flutter_localizations: # مطلوب للعربية و RTL
+    sdk: flutter
+
+  # --- قاعدة البيانات ---
+  sqflite: ^2.4.2
+  sqflite_common_ffi: ^2.3.6   # إلزامي: يجعل sqflite يعمل على Windows/Linux/macOS
+  sqlite3_flutter_libs: ^0.5.33 # يضمّن مكتبة SQLite داخل التطبيق
+
+  # --- مسارات وملفات ---
+  path: ^1.9.1
+  path_provider: ^2.1.5
+  file_picker: ^8.1.7          # لاختيار مكان حفظ النسخة الاحتياطية
+  shared_preferences: ^2.3.3   # تذكّر المستخدم وتفضيلات العيادة
+
+  # --- حالة التطبيق ---
+  provider: ^6.1.4
+
+  # --- تنسيق وتواريخ ---
+  intl: ^0.20.2
+
+  # --- أمان ---
+  bcrypt: ^1.1.3               # تشفير كلمات المرور
+  crypto: ^3.0.3               # SHA-256 لتوليد كود التفعيل والتحقق منه
+
+  # --- رسوم بيانية ---
+  fl_chart: ^0.69.2
+
+  # --- سطح المكتب ---
+  window_manager: ^0.4.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
+    - family: NotoSansArabic
+      fonts:
+        - asset: assets/fonts/NotoSansArabic-SemiBold.ttf
+          weight: 600

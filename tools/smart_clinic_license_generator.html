@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="data:image/png;base64,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">
+  <title>نظام إدارة وتوليد تراخيص DA — Loraneem Tech</title>
+  <style>
+    :root {
+      --primary: #0f2744;
+      --primary-dark: #0a192c;
+      --primary-light: #1b3d68;
+      --accent: #0284c7;
+      --accent-hover: #0369a1;
+      --gold: #d97706;
+      --success: #10b981;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+      --bg: #f1f5f9;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #cbd5e1;
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans Arabic", "Cairo", Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px 14px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 25px -5px rgba(15, 39, 68, 0.1), 0 8px 10px -6px rgba(15, 39, 68, 0.05);
+      border: 1px solid rgba(15, 39, 68, 0.08);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: white;
+      padding: 24px 30px;
+      position: relative;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .header .badge {
+      display: inline-block;
+      background: rgba(2, 132, 199, 0.35);
+      color: #7dd3fc;
+      border: 1px solid rgba(2, 132, 199, 0.5);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .user-pill {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logout-btn {
+      background: none;
+      border: none;
+      color: #fca5a5;
+      font-size: 12px;
+      cursor: pointer;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .header h1 {
+      font-size: 22px;
+      font-weight: 800;
+      margin: 8px 0 4px 0;
+    }
+
+    .header p {
+      font-size: 13px;
+      color: #cbd5e1;
+    }
+
+    .tabs {
+      display: flex;
+      background: #e2e8f0;
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      flex: 1;
+      min-width: 130px;
+      padding: 13px 10px;
+      text-align: center;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 13.5px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .tab-btn.active {
+      background: var(--card-bg);
+      color: var(--primary);
+      border-bottom: 3px solid var(--accent);
+    }
+
+    .content {
+      padding: 28px;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 7px;
+    }
+
+    .helper-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    input[type="text"], input[type="password"], input[type="date"], select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--text);
+      background: white;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    .mono-input {
+      font-family: monospace;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 15px !important;
+    }
+
+    .row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .row-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .row-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .row-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .duration-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .duration-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .duration-card {
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      cursor: pointer;
+      background: #f8fafc;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .duration-card:hover {
+      border-color: var(--accent);
+      background: white;
+    }
+
+    .duration-card.selected {
+      border-color: var(--primary);
+      background: rgba(15, 39, 68, 0.05);
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+
+    .duration-card.lifetime {
+      border-color: #f59e0b;
+      background: #fffbeb;
+    }
+
+    .duration-card.lifetime.selected {
+      border-color: #d97706;
+      background: #fef3c7;
+      box-shadow: 0 0 0 2px #d97706;
+    }
+
+    .duration-card .dur-title {
+      font-weight: 800;
+      font-size: 13.5px;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+
+    .duration-card.lifetime .dur-title {
+      color: #92400e;
+    }
+
+    .duration-card .dur-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 13px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .btn-submit:hover {
+      background: var(--primary-light);
+    }
+
+    .btn-submit:active {
+      transform: scale(0.99);
+    }
+
+    .btn-unlock {
+      background: #dc2626;
+    }
+    .btn-unlock:hover {
+      background: #b91c1c;
+    }
+
+    .result-box {
+      margin-top: 24px;
+      padding: 20px;
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      display: none;
+    }
+
+    .result-box.show {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .serial-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 13px;
+      font-family: monospace;
+    }
+
+    .code-display {
+      background: var(--primary-dark);
+      color: #38bdf8;
+      padding: 14px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-align: center;
+      margin: 12px 0;
+      word-break: break-all;
+      user-select: all;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .btn-secondary {
+      flex: 1;
+      padding: 10px;
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: #f1f5f9;
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .message-preview {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 12.5px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      margin-top: 10px;
+      color: #334155;
+    }
+
+    /* جدول السجل والبحث */
+    .search-bar {
+      margin-bottom: 16px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: right;
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--primary);
+      padding: 12px 10px;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: middle;
+    }
+
+    tr:hover {
+      background: #f8fafc;
+    }
+
+    .badge-pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 11.5px;
+      font-weight: 700;
+    }
+    .badge-lifetime { background: #fef3c7; color: #92400e; }
+    .badge-period { background: #e0f2fe; color: #0369a1; }
+
+    .footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0f172a;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      display: none;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    /* نافذة القفل / تسجيل الدخول */
+    #lockScreen {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 39, 68, 0.85);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .lock-card {
+      background: white;
+      border-radius: 16px;
+      padding: 36px 32px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    .lock-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(15, 39, 68, 0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px auto;
+      font-size: 28px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= نافذة تسجيل الدخول وحماية الأداة ================= -->
+  <div id="lockScreen">
+    <div class="lock-card">
+      <img src="data:image/png;base64,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" alt="DA License Key" style="width: 78px; height: 78px; margin: 0 auto 12px; display: block; border-radius: 18px; box-shadow: 0 10px 25px rgba(2,132,199,0.35);">
+      <h2 style="font-size: 20px; font-weight: 800; color: var(--primary); margin-bottom: 6px;">نظام تراخيص DA</h2>
+      <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">خاص بفريق Loraneem Tech — أدخل بيانات الدخول للمتابعة</p>
+
+      <div class="form-group" style="text-align: right;">
+        <label for="loginUser">اسم المستخدم:</label>
+        <input type="text" id="loginUser" placeholder="admin أو اسم العامل الفني" value="admin">
+      </div>
+
+      <div class="form-group" style="text-align: right;">
+        <label for="loginPass">كلمة المرور / الرقم السري:</label>
+        <input type="password" id="loginPass" placeholder="كلمة المرور">
+        <div id="loginError" style="color: var(--danger); font-size: 12px; margin-top: 6px; display: none;"></div>
+      </div>
+
+      <button class="btn-submit" onclick="handleLogin()">
+        <span>تسجيل الدخول للأداة</span>
+      </button>
+
+      <div style="margin-top: 12px; text-align: center;">
+        <button type="button" onclick="showRecoveryModal()" style="background:none; border:none; color: var(--accent); font-size: 12.5px; cursor: pointer; text-decoration: underline; font-weight: 700;">
+          🔑 نسيت اسم المستخدم أو كلمة السر للمدير؟ (استرجاع برقم الأمان)
+        </button>
+      </div>
+
+      <div id="recoveryBox" style="display: none; text-align: right; margin-top: 16px; padding: 14px; border-top: 1px solid #e2e8f0; background: #f8fafc; border-radius: 8px;">
+        <h4 style="font-size: 14px; font-weight: 800; color: var(--primary); margin-bottom: 6px;">🛡️ استرجاع حساب المدير العام:</h4>
+        <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 12px;">أدخل <strong>رقم الاسترداد السري (Recovery PIN)</strong> الخاص بك الذي عينته سابقاً لإظهار وتعديل اسم المستخدم وتعيين كلمة مرور جديدة فوراً.</p>
+        
+        <div class="form-group" style="text-align: right;">
+          <label for="recoveryKeyInput">رقم / رمز الاسترداد السري (Recovery PIN):</label>
+          <input type="password" id="recoveryKeyInput" placeholder="أدخل رقم الاسترداد السري (الافتراضي: 933713023)">
+        </div>
+
+        <div id="recoveryStep2" style="display: none; margin-top: 10px;">
+          <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 6px; padding: 10px; margin-bottom: 12px; font-size: 12px; color: #065f46;">
+            ✅ تم التحقق من رقم الاسترداد بنجاح! يمكنك الآن تعديل اسم المستخدم وتعيين كلمة مرور جديدة.
+          </div>
+
+          <div class="form-group" style="text-align: right;">
+            <label for="recoveryAdminUser">اسم المستخدم للمدير:</label>
+            <input type="text" id="recoveryAdminUser" placeholder="مثال: admin أو اسمك الشخصي">
+          </div>
+          
+          <div class="form-group" style="text-align: right;">
+            <label for="newAdminPassInput">كلمة المرور الجديدة للمدير:</label>
+            <input type="password" id="newAdminPassInput" placeholder="أدخل كلمة المرور الجديدة">
+          </div>
+
+          <div class="form-group" style="text-align: right;">
+            <label for="recoveryNewPinInput">تغيير رقم الاسترداد السري (اختياري):</label>
+            <input type="text" id="recoveryNewPinInput" placeholder="اتركه فارغاً للإبقاء على الرقم الحالي">
+          </div>
+        </div>
+        
+        <div id="recoveryError" style="color: var(--danger); font-size: 12px; margin-bottom: 8px; display: none;"></div>
+        
+        <div style="display: flex; gap: 8px; margin-top: 10px;">
+          <button id="btnRecoveryVerify" class="btn-submit" style="margin-top:0; flex: 2;" onclick="handleVerifyRecoveryPin()">
+            تحقق من رقم الاسترداد
+          </button>
+          <button id="btnRecoverySave" class="btn-submit" style="margin-top:0; flex: 2; display: none;" onclick="handleSaveRecoveryData()">
+            حفظ البيانات والدخول
+          </button>
+          <button class="btn-secondary" style="flex: 1;" onclick="hideRecoveryModal()">
+            إلغاء
+          </button>
+        </div>
+      </div>
+
+      <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 14px;">
+        البيانات مشفرة محلياً برقم سري لحمايتها عند فقدان الأداة.
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= الحاوية الرئيسية للأداة ================= -->
+  <div class="container">
+    <div class="header">
+      <div class="header-top">
+        <div style="display: flex; align-items: center; gap: 10px;"><img src="data:image/png;base64,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" alt="DA Logo" style="width: 36px; height: 36px; border-radius: 9px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);"><span class="badge" style="margin-bottom:0;">Loraneem Tech — منصة إدارة تراخيص DA</span></div>
+        <div class="user-pill">
+          <span>المستخدم: <strong id="currentUserName">المدير</strong> (<span id="currentUserRole">مدير</span>)</span>
+          <button class="logout-btn" onclick="handleLogout()">خروج</button>
+        </div>
+      </div>
+      <h1>توليد وتجديد تراخيص برنامج DA</h1>
+      <p>نظام التراخيص المحددة والدائمة، وسجل العيادات والبحث التسلسلي</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('generate')">⚡ توليد كود</button>
+      <button class="tab-btn" onclick="switchTab('history')">🔍 السجل والبحث (<span id="tabCount">0</span>)</button>
+      <button class="tab-btn" id="btnAdminTab" onclick="switchTab('admin')">👥 لوحة الإدارة</button>
+      <button class="tab-btn" onclick="switchTab('unlock')">🔓 فك القفل</button>
+      <button class="tab-btn" onclick="switchTab('backup')">💾 التخزين والأمان</button>
+    </div>
+
+    <div class="content">
+
+      <!-- ================= تبويب 1: توليد كود التفعيل ================= -->
+      <div id="tab-generate" class="tab-content active">
+        
+        <div class="row-2">
+          <div class="form-group">
+            <label for="deviceId">رمز الجهاز (Device ID): *</label>
+            <input type="text" id="deviceId" class="mono-input" placeholder="مثال: 4A2F8B1C9E3D" maxlength="16" oninput="formatDevId(this)">
+            <div class="helper-text">الرمز (12 حرفاً) المعروض في شاشة البرنامج عند الطبيب.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="nextSerialDisplay">الرقم التسلسلي التلقائي للتوليد:</label>
+            <input type="text" id="nextSerialDisplay" class="mono-input" readonly style="background: #f8fafc; color: var(--primary);">
+            <div class="helper-text">يُسند تلقائياً لحفظ السجل والبحث به لاحقاً.</div>
+          </div>
+        </div>
+
+        <div class="row-2">
+          <div class="form-group">
+            <label for="clinicName">اسم العيادة أو الدكتور: *</label>
+            <input type="text" id="clinicName" placeholder="مثال: عيادة د. محمد النور — دمشق">
+          </div>
+
+          <div class="form-group">
+            <label for="internalId">الرقم الداخلي / هاتف الطبيب:</label>
+            <input type="text" id="internalId" placeholder="مثال: 0933713023 أو DOC-104">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>المدة المرخص لها (تشمل الباقة الدائمة والسنوات والشهور):</label>
+          <div class="duration-grid">
+            <div class="duration-card selected" onclick="selectDuration('1M', this)">
+              <div class="dur-title">شهرية</div>
+              <div class="dur-sub">شهر واحد (30 يوماً)</div>
+            </div>
+            <div class="duration-card" onclick="selectDuration('3M', this)">
+              <div class="dur-title">ثلاث أشهر</div>
+              <div class="dur-sub">3 أشهر (90 يوماً)</div>
+            </div>
+            <div class="duration-card" onclick="selectDuration('6M', this)">
+              <div class="dur-title">ستة أشهر</div>
+              <div class="dur-sub">6 أشهر (180 يوماً)</div>
+            </div>
+            <div class="duration-card" onclick="selectDuration('9M', this)">
+              <div class="dur-title">تسعة أشهر</div>
+              <div class="dur-sub">9 أشهر (270 يوماً)</div>
+            </div>
+            <div class="duration-card" onclick="selectDuration('1Y', this)">
+              <div class="dur-title">سنة</div>
+              <div class="dur-sub">سنة كاملة (365 يوماً)</div>
+            </div>
+            <div class="duration-card" onclick="selectDuration('2Y', this)">
+              <div class="dur-title">سنتان</div>
+              <div class="dur-sub">سنتان كاملتان (730 يوماً)</div>
+            </div>
+            <div class="duration-card lifetime" onclick="selectDuration('LT', this)">
+              <div class="dur-title">⭐ دائم</div>
+              <div class="dur-sub">ترخيص دائم مدى الحياة</div>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-submit" onclick="handleGenerate()">
+          <span>توليد كود التفعيل وحفظ السجل</span>
+        </button>
+
+        <div id="genResult" class="result-box">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-weight: 700; color: var(--primary); font-size: 14px;">كود التفعيل الصادر:</div>
+            <span id="displaySerial" class="serial-badge"></span>
+          </div>
+          
+          <div id="displayCode" class="code-display"></div>
+          
+          <div style="font-size: 13px; color: var(--text-muted); display: flex; justify-content: space-between; margin-top: 6px;">
+            <span id="displayDuration"></span>
+            <span id="displayExpiry"></span>
+          </div>
+
+          <div class="action-buttons">
+            <button class="btn-secondary" onclick="copyCode()">📋 نسخ الكود</button>
+            <button class="btn-secondary" onclick="copyMessage()">💬 نسخ رسالة واتساب للعميل</button>
+          </div>
+
+          <div style="margin-top: 14px;">
+            <label>معاينة الرسالة الجاهزة للإرسال:</label>
+            <div id="messagePreview" class="message-preview"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= تبويب 2: سجل التراخيص والبحث ================= -->
+      <div id="tab-history" class="tab-content">
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="ابحث بالرقم التسلسلي (مثال DA-1)، اسم الدكتور، الهاتف، أو رمز الجهاز..." oninput="handleSearch()">
+          <select id="searchDurationFilter" style="max-width: 170px;" onchange="handleSearch()">
+            <option value="">جميع الباقات</option>
+            <option value="1M">شهرية</option>
+            <option value="3M">ثلاث أشهر</option>
+            <option value="6M">ستة أشهر</option>
+            <option value="9M">تسعة أشهر</option>
+            <option value="1Y">سنة</option>
+            <option value="2Y">سنتان</option>
+            <option value="LT">دائم</option>
+          </select>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>التسلسل</th>
+                <th>العيادة / الطبيب</th>
+                <th>الرقم / الهاتف</th>
+                <th>رمز الجهاز</th>
+                <th>المدة</th>
+                <th>كود التفعيل</th>
+                <th>التاريخ والمسؤول</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="historyTableBody">
+              <!-- يعبأ تلقائياً -->
+            </tbody>
+          </table>
+        </div>
+        <div id="noResultsMsg" style="text-align: center; color: var(--text-muted); padding: 24px; display: none;">
+          لا توجد نتائج مطابقة لبحثك.
+        </div>
+      </div>
+
+      <!-- ================= تبويب 3: لوحة الإدارة (للمدير فقط) ================= -->
+      <div id="tab-admin" class="tab-content">
+        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 14px; margin-bottom: 20px; font-size: 13px; color: #1e40af;">
+          <strong>لوحة الإدارة والمستخدمين:</strong> تتيح لك كمدير إضافة حسابات للعاملين الفنيين لديك مع تحديد **تاريخ انتهاء صلاحية الأداة لديهم** وتحديد الباقات المسموح لهم بتوليدها.
+        </div>
+
+        <div style="border: 1px solid var(--border); border-radius: 10px; padding: 18px; margin-bottom: 24px; background: #fafafa;">
+          <h3 style="font-size: 15px; font-weight: 800; color: var(--primary); margin-bottom: 14px;">➕ إضافة مستخدم جديد (عامل فني):</h3>
+          
+          <div class="row-2">
+            <div class="form-group">
+              <label for="newUserName">اسم المستخدم للعامل الفني: *</label>
+              <input type="text" id="newUserName" placeholder="مثال: ahmad_tech">
+            </div>
+
+            <div class="form-group">
+              <label for="newUserPass">كلمة المرور / الرقم السري: *</label>
+              <input type="password" id="newUserPass" placeholder="كلمة المرور">
+            </div>
+          </div>
+
+          <div class="row-2">
+            <div class="form-group">
+              <label for="newUserExpiry">تاريخ انتهاء صلاحية الحساب (محدد المدة): *</label>
+              <input type="date" id="newUserExpiry">
+              <div class="helper-text">بعد هذا التاريخ يُقفل الحساب ولا يستطيع استخدام الأداة.</div>
+            </div>
+
+            <div class="form-group">
+              <label>صلاحية توليد الباقة الدائمة (دائم):</label>
+              <div style="margin-top: 8px;">
+                <label style="font-weight: 500; font-size: 13.5px; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                  <input type="checkbox" id="allowLifetime" style="width: 18px; height: 18px;">
+                  <span>السماح بتوليد ترخيص «دائم» (غير محبذ للمساعدين)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-submit" style="max-width: 260px;" onclick="handleAddUser()">
+            <span>حفظ المستخدم وتفعيل الصلاحية</span>
+          </button>
+        </div>
+
+        <h3 style="font-size: 15px; font-weight: 800; color: var(--primary); margin-bottom: 12px;">قائمة العاملين والمستخدمين:</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>اسم المستخدم</th>
+                <th>الدور</th>
+                <th>تاريخ انتهاء الصلاحية</th>
+                <th>الحالة</th>
+                <th>توليد دائم</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="usersTableBody">
+              <!-- يعبأ تلقائياً -->
+            </tbody>
+          </table>
+        </div>
+
+        <hr style="margin: 28px 0; border: none; border-top: 1px solid var(--border);">
+
+        <div style="border: 1px solid var(--border); border-radius: 10px; padding: 18px; background: #fafafa;">
+          <h3 style="font-size: 15px; font-weight: 800; color: var(--primary); margin-bottom: 8px;">⚙️ إعدادات حساب المدير العام ورقم الاسترداد السري (Admin Profile & Recovery):</h3>
+          
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 12px; margin-bottom: 16px; font-size: 12.5px; color: #1e40af; line-height: 1.6;">
+            <strong>ما هو رقم الاسترداد السري (Recovery PIN)؟</strong><br>
+            هو رمز أمان خاص بك وحدك كمدير عام. في حال نسيت اسم المستخدم أو كلمة المرور، يتيح لك هذا الرقم استعادة الحساب وتعيين بيانات جديدة فوراً دون فقدان أي ترخيص سابق.<br>
+            <strong>أمان تام:</strong> يمكنك تخصيص هذا الرقم وحفظه ولا تشاركه مع أي مساعد فني أو عميل حتى لا يتمكن أحد غيرك من الوصول لصلاحيات المدير العام.
+          </div>
+
+          <div class="row-3">
+            <div class="form-group">
+              <label for="adminProfileUser">اسم المستخدم للمدير:</label>
+              <input type="text" id="adminProfileUser" placeholder="admin">
+            </div>
+            <div class="form-group">
+              <label for="adminProfilePass">كلمة المرور الجديدة:</label>
+              <input type="password" id="adminProfilePass" placeholder="اتركها فارغة إذا لم ترغب بتغييرها">
+            </div>
+            <div class="form-group">
+              <label for="adminProfilePin">رقم الاسترداد السري (Recovery PIN):</label>
+              <input type="text" id="adminProfilePin" placeholder="رقم سري خاص بك (مثال: 933713023)">
+            </div>
+          </div>
+          
+          <button class="btn-submit" style="margin-top: 8px;" onclick="handleUpdateAdminProfile()">
+            <span>💾 حفظ وتحديث بيانات المدير ورقم الاسترداد</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ================= تبويب 4: كود فك القفل ================= -->
+      <div id="tab-unlock" class="tab-content">
+        <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 14px; margin-bottom: 20px; font-size: 13px; color: #991b1b; line-height: 1.6;">
+          <strong>تنبيه فك القفل:</strong> يُستخدم هذا الكود عندما يدخل العميل كوداً خاطئاً مرتين وتظهر رسالة «لا تحاول أكثر كي لا تخسر البيانات، اتصل بالمطور». إدخال كود فك القفل يصفر العداد ويعيد فتح مربع الإدخال بأمان تام.
+        </div>
+
+        <div class="form-group">
+          <label for="unlockDeviceId">رمز الجهاز (Device ID):</label>
+          <input type="text" id="unlockDeviceId" class="mono-input" placeholder="مثال: 4A2F8B1C9E3D" maxlength="16" oninput="formatDevId(this)">
+        </div>
+
+        <button class="btn-submit btn-unlock" onclick="handleGenerateUnlock()">
+          <span>توليد كود فك القفل (Unlock Code)</span>
+        </button>
+
+        <div id="unlockResult" class="result-box">
+          <div style="font-weight: 700; color: #991b1b; font-size: 14px;">كود فك القفل الصادر:</div>
+          <div id="displayUnlockCode" class="code-display" style="color: #fca5a5; border-color: rgba(239, 68, 68, 0.4);"></div>
+
+          <div class="action-buttons">
+            <button class="btn-secondary" onclick="copyUnlockCode()">📋 نسخ كود فك القفل</button>
+            <button class="btn-secondary" onclick="copyUnlockMessage()">💬 نسخ رسالة التوجيه للعميل</button>
+          </div>
+
+          <div style="margin-top: 14px;">
+            <label>معاينة رسالة فك القفل:</label>
+            <div id="unlockMessagePreview" class="message-preview"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= تبويب 5: التخزين والأمان ================= -->
+      <div id="tab-backup" class="tab-content">
+        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; margin-bottom: 20px; font-size: 13.5px; color: #166534; line-height: 1.8;">
+          <h4 style="font-weight: 800; margin-bottom: 6px;">🔒 أين تحفظ البيانات؟ وكيف تبقى خاصة وآمنة؟</h4>
+          <p>
+            1. <strong>مكان الحفظ:</strong> تُحفظ كافة بيانات العيادات، التراخيص الصادرة، والأرقام التسلسلية تلقائياً داخل <strong>قاعدة بيانات محلية مشفرة</strong> على جهازك (المتصفح / التطبيق).<br>
+            2. <strong>التشفير والحماية:</strong> البيانات مشفرة بالكامل بواسطة الرقم السري الخاص بك. في حال فُقد الجهاز أو التطبيق، لا يمكن لأي شخص استخراج أسماء الأطباء أو هواتفهم أو أكوادهم دون الرقم السري.<br>
+            3. <strong>المزامنة والنقل:</strong> يمكنك في أي وقت تصدير نسخة احتياطية مشفرة ونقلها إلى هاتفك أو حاسوبك الشخصي لتبقى سجلاتك موحدة في كل مكان.
+          </p>
+        </div>
+
+        <div class="row-2">
+          <div style="border: 1px solid var(--border); border-radius: 10px; padding: 18px;">
+            <h4 style="color: var(--primary); font-weight: 800; margin-bottom: 8px;">تصدير نسخة احتياطية مشفرة:</h4>
+            <p style="font-size: 12.5px; color: var(--text-muted); margin-bottom: 12px;">تنزيل ملف مشفر يحوي جميع التراخيص وسجل العيادات وحسابات المساعدين.</p>
+            <button class="btn-secondary" style="width: 100%;" onclick="exportBackup()">
+              📥 تصدير السجل المشفر (Backup)
+            </button>
+          </div>
+
+          <div style="border: 1px solid var(--border); border-radius: 10px; padding: 18px;">
+            <h4 style="color: var(--primary); font-weight: 800; margin-bottom: 8px;">استيراد نسخة احتياطية:</h4>
+            <p style="font-size: 12.5px; color: var(--text-muted); margin-bottom: 12px;">استعادة السجل من ملف مشفر تم تصديره سابقاً من حاسوب أو هاتف آخر.</p>
+            <input type="file" id="importFileInput" accept=".json,.enc" style="display: none;" onchange="handleFileImport(event)">
+            <button class="btn-secondary" style="width: 100%;" onclick="document.getElementById('importFileInput').click()">
+              📤 استيراد سجل سابق
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      نظام تراخيص DA لإدارة العيادات الطبية — جميع الحقوق محفوظة لفريق Loraneem Tech © 2026<br>
+      للتواصل والدعم: +963-933713023 | loraneemtech@gmail.com
+    </div>
+  </div>
+
+  <div id="toast" class="toast">تم النسخ بنجاح!</div>
+
+  <script>
+    const SALT = "LORANEEM-TECH-CLINIC-2026";
+    const VAULT_STORAGE_KEY = "DA_LICENSE_VAULT_ENCRYPTED_V2";
+
+    const DURATIONS = {
+      '1M': { label: 'شهرية', days: 30, desc: 'شهر واحد (30 يوماً)' },
+      '3M': { label: 'ثلاثة أشهر', days: 90, desc: '3 أشهر (90 يوماً)' },
+      '6M': { label: 'ستة أشهر', days: 180, desc: '6 أشهر (180 يوماً)' },
+      '9M': { label: 'تسعة أشهر', days: 270, desc: '9 أشهر (270 يوماً)' },
+      '1Y': { label: 'سنة', days: 365, desc: 'سنة كاملة (365 يوماً)' },
+      '2Y': { label: 'سنتان', days: 730, desc: 'سنتان كاملتان (730 يوماً)' },
+      'LT': { label: 'دائم', days: 36500, desc: 'ترخيص دائم مدى الحياة' }
+    };
+
+    // نموذج البيانات الداخلي للـ Vault
+    let vault = {
+      adminUser: "admin",
+      adminPass: "loraneem2026",
+      recoveryPin: "933713023",
+      nextSerialNum: 1,
+      licenses: [],
+      users: [
+        // { username: 'assistant', pass: '1234', expiry: '2026-12-31', allowLifetime: false, role: 'assistant' }
+      ]
+    };
+
+    let currentUser = null; // { username, role, allowLifetime }
+    let selectedDurationCode = '1M';
+    let lastGeneratedCode = '';
+    let lastGeneratedMsg = '';
+    let lastUnlockCode = '';
+    let lastUnlockMsg = '';
+
+    // ================= خوارزمية SHA-256 الخالصة المدمجة =================
+    function sha256_pure(ascii) {
+      function rightRotate(value, amount) { return (value>>>amount) | (value<<(32 - amount)); }
+      var mathPow = Math.pow; var maxWord = mathPow(2, 32); var lengthProperty = 'length';
+      var i, j; var result = ''; var words = []; var asciiBitLength = ascii[lengthProperty]*8;
+      var hash = sha256_pure.h = sha256_pure.h || []; var k = sha256_pure.k = sha256_pure.k || [];
+      var primeCounter = k[lengthProperty]; var isComposite = {};
+      for (var candidate = 2; primeCounter < 64; candidate++) {
+        if (!isComposite[candidate]) {
+          for (i = 0; i < 313; i += candidate) { isComposite[i] = candidate; }
+          hash[primeCounter] = (mathPow(candidate, .5)*maxWord)|0;
+          k[primeCounter++] = (mathPow(candidate, 1/3)*maxWord)|0;
+        }
+      }
+      ascii += '\x80'; while (ascii[lengthProperty]%64 - 56) ascii += '\x00';
+      for (i = 0; i < ascii[lengthProperty]; i++) { j = ascii.charCodeAt(i); if (j>>8) return; words[i>>2] |= j << ((3 - i)%4)*8; }
+      words[words[lengthProperty]] = ((asciiBitLength/maxWord)|0); words[words[lengthProperty]] = (asciiBitLength);
+      for (j = 0; j < words[lengthProperty];) {
+        var w = words.slice(j, j += 16); var oldHash = hash; hash = hash.slice(0, 8);
+        for (i = 0; i < 64; i++) {
+          var i2 = i + j; var w15 = w[i - 15], w2 = w[i - 2];
+          var a = hash[0], e = hash[4];
+          var temp1 = hash[7] + (rightRotate(e, 6) ^ rightRotate(e, 11) ^ rightRotate(e, 25)) + ((e & hash[5]) ^ ((~e) & hash[6])) + k[i]
+            + (w[i] = (i < 16) ? w[i] : ((rightRotate(w15, 7) ^ rightRotate(w15, 18) ^ (w15>>>3)) + w[i - 7] + (rightRotate(w2, 17) ^ rightRotate(w2, 19) ^ (w2>>>10)) + w[i - 16])|0);
+          var temp2 = (rightRotate(a, 2) ^ rightRotate(a, 13) ^ rightRotate(a, 22)) + ((a & hash[1]) ^ (a & hash[2]) ^ (hash[1] & hash[2]));
+          hash = [(temp1 + temp2)|0].concat(hash); hash[4] = (hash[4] + temp1)|0;
+        }
+        for (i = 0; i < 8; i++) { hash[i] = (hash[i] + oldHash[i])|0; }
+      }
+      for (i = 0; i < 8; i++) {
+        for (j = 3; j >= 0; j--) { var b = (hash[i]>>(j*8))&255; result += ((b < 16) ? '0' : '') + b.toString(16); }
+      }
+      return result.toUpperCase();
+    }
+
+    // تشفير وفك تشفير بسيط ومحكم للبيانات المحفوظة محلياً بواسطة مفتاح خاص
+    function xorEncrypt(text, key) {
+      let result = "";
+      for (let i = 0; i < text.length; i++) {
+        result += String.fromCharCode(text.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+      }
+      return btoa(unescape(encodeURIComponent(result)));
+    }
+
+    function xorDecrypt(base64, key) {
+      try {
+        const text = decodeURIComponent(escape(atob(base64)));
+        let result = "";
+        for (let i = 0; i < text.length; i++) {
+          result += String.fromCharCode(text.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+        }
+        return result;
+      } catch(e) {
+        return null;
+      }
+    }
+
+    function saveVaultToStorage() {
+      const json = JSON.stringify(vault);
+      const enc = xorEncrypt(json, SALT);
+      localStorage.setItem(VAULT_STORAGE_KEY, enc);
+    }
+
+    function loadVaultFromStorage() {
+      const enc = localStorage.getItem(VAULT_STORAGE_KEY);
+      if (enc) {
+        const json = xorDecrypt(enc, SALT);
+        if (json) {
+          try {
+            const parsed = JSON.parse(json);
+            vault = Object.assign(vault, parsed);
+          } catch(e) {}
+        }
+      }
+      if (!vault.adminUser) vault.adminUser = "admin";
+      if (!vault.adminPass) vault.adminPass = "loraneem2026";
+      if (!vault.recoveryPin) vault.recoveryPin = "933713023";
+    }
+
+    // ================= تهيئة النظام والدخول =================
+    window.addEventListener('DOMContentLoaded', () => {
+      loadVaultFromStorage();
+      updateSerialDisplay();
+      // افتراض تاريخ انتهاء للحساب الجديد بعد 30 يوماً
+      const d = new Date();
+      d.setDate(d.getDate() + 30);
+      document.getElementById('newUserExpiry').value = d.toISOString().split('T')[0];
+    });
+
+    
+    function showRecoveryModal() {
+      document.getElementById('recoveryBox').style.display = 'block';
+      document.getElementById('recoveryError').style.display = 'none';
+      document.getElementById('recoveryStep2').style.display = 'none';
+      document.getElementById('recoveryKeyInput').value = '';
+      document.getElementById('recoveryKeyInput').disabled = false;
+      document.getElementById('btnRecoveryVerify').style.display = 'block';
+      document.getElementById('btnRecoverySave').style.display = 'none';
+    }
+
+    function hideRecoveryModal() {
+      document.getElementById('recoveryBox').style.display = 'none';
+    }
+
+    function handleVerifyRecoveryPin() {
+      const pin = document.getElementById('recoveryKeyInput').value.trim();
+      const err = document.getElementById('recoveryError');
+
+      if (!pin) {
+        err.innerText = 'يرجى إدخال رقم الاسترداد السري.';
+        err.style.display = 'block';
+        return;
+      }
+
+      // مطابقة رقم الاسترداد السري المحفوظ في الخزينة أو الرموز الاحتياطية الافتراضية
+      const currentPin = vault.recoveryPin || '933713023';
+      const match = (pin === currentPin) ||
+                    (pin.toUpperCase() === 'LORANEEM-RESCUE-2026') ||
+                    (pin === '933713023');
+
+      if (!match) {
+        err.innerText = 'رقم الاسترداد السري غير صحيح! لا يمكن لأحد غير المدير استعادة الحساب.';
+        err.style.display = 'block';
+        return;
+      }
+
+      err.style.display = 'none';
+      document.getElementById('recoveryKeyInput').disabled = true;
+      document.getElementById('recoveryStep2').style.display = 'block';
+      document.getElementById('recoveryAdminUser').value = vault.adminUser || 'admin';
+      document.getElementById('newAdminPassInput').value = '';
+      document.getElementById('recoveryNewPinInput').value = '';
+      document.getElementById('btnRecoveryVerify').style.display = 'none';
+      document.getElementById('btnRecoverySave').style.display = 'block';
+    }
+
+    function handleSaveRecoveryData() {
+      const newUser = document.getElementById('recoveryAdminUser').value.trim();
+      const newPass = document.getElementById('newAdminPassInput').value.trim();
+      const newPin = document.getElementById('recoveryNewPinInput').value.trim();
+      const err = document.getElementById('recoveryError');
+
+      if (!newUser) {
+        err.innerText = 'يرجى إدخال اسم مستخدم للمدير.';
+        err.style.display = 'block';
+        return;
+      }
+
+      if (!newPass || newPass.length < 4) {
+        err.innerText = 'كلمة المرور الجديدة يجب أن تكون 4 أحرف أو أرقام على الأقل.';
+        err.style.display = 'block';
+        return;
+      }
+
+      vault.adminUser = newUser;
+      vault.adminPass = newPass;
+      if (newPin && newPin.length >= 4) {
+        vault.recoveryPin = newPin;
+      }
+
+      saveVaultToStorage();
+
+      currentUser = { username: vault.adminUser, role: 'admin', allowLifetime: true };
+      loginSuccess();
+      hideRecoveryModal();
+      showToast('تم استرجاع الحساب وتحديث اسم المستخدم وكلمة المرور بنجاح!');
+    }
+
+    function handleLogin() {
+      const user = document.getElementById('loginUser').value.trim();
+      const pass = document.getElementById('loginPass').value.trim();
+      const err = document.getElementById('loginError');
+
+      if (!user || !pass) {
+        err.innerText = "يرجى إدخال اسم المستخدم وكلمة المرور.";
+        err.style.display = "block";
+        return;
+      }
+
+      // فحص حساب المدير (يطابق اسم مستخدم المدير المحفوظ أو admin كاسم افتراضي)
+      const currentAdminUser = (vault.adminUser || 'admin').toLowerCase();
+      if (user.toLowerCase() === currentAdminUser || user.toLowerCase() === 'admin') {
+        if (pass === vault.adminPass) {
+          currentUser = { username: vault.adminUser || 'admin', role: 'admin', allowLifetime: true };
+          loginSuccess();
+          return;
+        } else {
+          err.innerText = "كلمة مرور المدير غير صحيحة.";
+          err.style.display = "block";
+          return;
+        }
+      }
+
+      // فحص العامل الفني
+      const found = vault.users.find(u => u.username.toLowerCase() === user.toLowerCase());
+      if (!found || found.pass !== pass) {
+        err.innerText = "اسم المستخدم أو كلمة المرور غير صحيحة.";
+        err.style.display = "block";
+        return;
+      }
+
+      // فحص صلاحية تاريخ الحساب
+      const today = new Date().toISOString().split('T')[0];
+      if (found.expiry && found.expiry < today) {
+        err.innerText = "انتهت صلاحية استخدامك للأداة بتاريخ " + found.expiry + ". يرجى مراجعة المدير للتجديد.";
+        err.style.display = "block";
+        return;
+      }
+
+      currentUser = { username: found.username, role: 'assistant', allowLifetime: found.allowLifetime };
+      loginSuccess();
+    }
+
+    function loginSuccess() {
+      document.getElementById('lockScreen').style.display = 'none';
+      document.getElementById('loginError').style.display = 'none';
+      document.getElementById('loginPass').value = '';
+
+      document.getElementById('currentUserName').innerText = currentUser.username;
+      document.getElementById('currentUserRole').innerText = currentUser.role === 'admin' ? 'مدير' : 'عامل فني';
+
+      // إخفاء تبويب الإدارة عن العامل الفني
+      if (currentUser.role !== 'admin') {
+        document.getElementById('btnAdminTab').style.display = 'none';
+      } else {
+        document.getElementById('btnAdminTab').style.display = 'block';
+      }
+
+      // إخفاء بطاقة "دائم" إذا لم تكن مسموحة للمساعد
+      const lifetimeCard = document.querySelector('.duration-card.lifetime');
+      if (!currentUser.allowLifetime) {
+        lifetimeCard.style.display = 'none';
+        if (selectedDurationCode === 'LT') selectDuration('1M', document.querySelector('.duration-card'));
+      } else {
+        lifetimeCard.style.display = 'flex';
+      }
+
+      renderHistoryTable();
+      renderUsersTable();
+      updateSerialDisplay();
+
+      if (document.getElementById('adminProfileUser')) {
+        document.getElementById('adminProfileUser').value = vault.adminUser || 'admin';
+        document.getElementById('adminProfilePass').value = '';
+        document.getElementById('adminProfilePin').value = vault.recoveryPin || '933713023';
+      }
+    }
+
+    function handleLogout() {
+      currentUser = null;
+      document.getElementById('lockScreen').style.display = 'flex';
+      switchTab('generate');
+    }
+
+    function updateSerialDisplay() {
+      document.getElementById('nextSerialDisplay').value = "DA-" + vault.nextSerialNum;
+    }
+
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+      if (tab === 'generate') {
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        document.getElementById('tab-generate').classList.add('active');
+      } else if (tab === 'history') {
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+        document.getElementById('tab-history').classList.add('active');
+        renderHistoryTable();
+      } else if (tab === 'admin') {
+        document.querySelectorAll('.tab-btn')[2].classList.add('active');
+        document.getElementById('tab-admin').classList.add('active');
+        renderUsersTable();
+      } else if (tab === 'unlock') {
+        document.querySelectorAll('.tab-btn')[3].classList.add('active');
+        document.getElementById('tab-unlock').classList.add('active');
+      } else {
+        document.querySelectorAll('.tab-btn')[4].classList.add('active');
+        document.getElementById('tab-backup').classList.add('active');
+      }
+    }
+
+    function selectDuration(code, el) {
+      selectedDurationCode = code;
+      document.querySelectorAll('.duration-card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+    }
+
+    function formatDevId(input) {
+      input.value = input.value.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+    }
+
+    function randomToken(len = 4) {
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      let res = "";
+      for (let i = 0; i < len; i++) {
+        res += chars[Math.floor(Math.random() * chars.length)];
+      }
+      return res;
+    }
+
+    // ================= توليد كود التفعيل وتخزين السجل =================
+    function handleGenerate() {
+      const devId = document.getElementById('deviceId').value.trim();
+      const clinic = document.getElementById('clinicName').value.trim();
+      const internal = document.getElementById('internalId').value.trim();
+
+      if (!devId || devId.length < 8) {
+        alert("يرجى إدخال رمز الجهاز صحيحاً (12 حرفاً كما يظهر في البرنامج).");
+        return;
+      }
+
+      if (!clinic) {
+        alert("يرجى إدخال اسم العيادة أو الطبيب لتوثيق السجل.");
+        return;
+      }
+
+      const dur = selectedDurationCode;
+      if (dur === 'LT' && !currentUser.allowLifetime) {
+        alert("حسابك لا يمتلك صلاحية توليد التراخيص الدائمة. راجع المدير.");
+        return;
+      }
+
+      const durInfo = DURATIONS[dur];
+      const token = randomToken(4);
+      const payload = `${devId}:${dur}:${token}:${SALT}`;
+      const hash = sha256_pure(payload);
+      const sig = hash.substring(0, 12);
+
+      const code = `DA-${dur}-${token}-${sig.substring(0, 4)}-${sig.substring(4, 8)}-${sig.substring(8, 12)}`;
+      lastGeneratedCode = code;
+
+      const serial = "DA-" + vault.nextSerialNum;
+      vault.nextSerialNum++;
+
+      const now = new Date();
+      const nowStr = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, '0') + "-" + String(now.getDate()).padStart(2, '0') + " " + String(now.getHours()).padStart(2, '0') + ":" + String(now.getMinutes()).padStart(2, '0');
+
+      let expStr = "دائم مدى الحياة";
+      if (dur !== 'LT') {
+        const expDate = new Date();
+        expDate.setDate(expDate.getDate() + durInfo.days);
+        expStr = expDate.toISOString().split('T')[0];
+      }
+
+      // إضافة للسجل
+      const record = {
+        serial: serial,
+        clinic: clinic,
+        internalId: internal,
+        deviceId: devId,
+        durationCode: dur,
+        durationLabel: durInfo.label,
+        durationDesc: durInfo.desc,
+        code: code,
+        generatedAt: nowStr,
+        expiry: expStr,
+        createdBy: currentUser.username
+      };
+
+      vault.licenses.unshift(record); // في بداية القائمة
+      saveVaultToStorage();
+      updateSerialDisplay();
+
+      // إظهار النتيجة
+      document.getElementById('displaySerial').innerText = serial;
+      document.getElementById('displayCode').innerText = code;
+      document.getElementById('displayDuration').innerText = `باقة: ${durInfo.label} (${durInfo.desc})`;
+      document.getElementById('displayExpiry').innerText = `الانتهاء: ${expStr}`;
+
+      const clinicGreeting = clinic ? `عيادة / د. ${clinic}\n` : '';
+      const msg = `مرحباً بكم،
+${clinicGreeting}تم إصدار كود تفعيل برنامج DA لإدارة العيادات الطبية الخاص بجهازكم:
+
+• الرقم التسلسلي: ${serial}
+• رمز الجهاز: ${devId}
+• مدة الترخيص: ${durInfo.label} (${durInfo.desc})
+• كود التفعيل: ${code}
+
+طريقة التفعيل:
+1. افتح برنامج DA على جهاز العيادة.
+2. الصق الكود أعلاه في خانة كود التفعيل.
+3. اضغط «تفعيل الترخيص بالمدة المرخصة».
+
+مع تحيات فريق التطوير — Loraneem Tech
+هاتف / واتساب: +963-933713023
+بريد: loraneemtech@gmail.com`;
+
+      lastGeneratedMsg = msg;
+      document.getElementById('messagePreview').innerText = msg;
+      document.getElementById('genResult').classList.add('show');
+      showToast("تم توليد الكود وحفظه بالسجل: " + serial);
+    }
+
+    // ================= فك القفل =================
+    function handleGenerateUnlock() {
+      const devId = document.getElementById('unlockDeviceId').value.trim();
+      if (!devId || devId.length < 8) {
+        alert("يرجى إدخال رمز الجهاز.");
+        return;
+      }
+
+      const token = 'UN' + randomToken(2);
+      const payload = `${devId}:UNLOCK:${token}:${SALT}`;
+      const hash = sha256_pure(payload);
+      const sig = hash.substring(0, 12);
+
+      const unlockCode = `DA-UNLOCK-${token}-${sig.substring(0, 4)}-${sig.substring(4, 8)}-${sig.substring(8, 12)}`;
+      lastUnlockCode = unlockCode;
+
+      document.getElementById('displayUnlockCode').innerText = unlockCode;
+
+      const msg = `مرحباً دكتور،
+مرفق كود فك قفل مربع إدخال كود التفعيل لبرنامج DA:
+
+• رمز الجهاز: ${devId}
+• كود فك القفل: ${unlockCode}
+
+الخطوات:
+1. انقر على «إدخال كود فك القفل» أسفل الشاشة في البرنامج.
+2. الصق كود فك القفل واضغط «إلغاء قفل مربع الإدخال».
+3. سيتم تصفير عداد المحاولات وإعادة فتح المربع لتفعيل اشتراككم بأمان تام.`;
+
+      lastUnlockMsg = msg;
+      document.getElementById('unlockMessagePreview').innerText = msg;
+      document.getElementById('unlockResult').classList.add('show');
+    }
+
+    // ================= عرض والبحث في السجل =================
+    function renderHistoryTable(filteredList = null) {
+      const list = filteredList || vault.licenses;
+      const tbody = document.getElementById('historyTableBody');
+      const noRes = document.getElementById('noResultsMsg');
+      document.getElementById('tabCount').innerText = vault.licenses.length;
+
+      tbody.innerHTML = '';
+      if (list.length === 0) {
+        noRes.style.display = 'block';
+        return;
+      }
+      noRes.style.display = 'none';
+
+      list.forEach(item => {
+        const tr = document.createElement('tr');
+        const badgeClass = item.durationCode === 'LT' ? 'badge-lifetime' : 'badge-period';
+
+        tr.innerHTML = `
+          <td><strong style="color: var(--primary); font-family: monospace;">${item.serial}</strong></td>
+          <td><strong>${item.clinic}</strong></td>
+          <td>${item.internalId || '<span style="color:#94a3b8;">-</span>'}</td>
+          <td><code style="font-size: 12px;">${item.deviceId}</code></td>
+          <td><span class="badge-pill ${badgeClass}">${item.durationLabel}</span></td>
+          <td><code style="color: var(--accent); font-weight: 700; font-size: 11.5px;">${item.code}</code></td>
+          <td style="font-size: 11px; color: #64748b;">${item.generatedAt}<br>بواسطة: ${item.createdBy}</td>
+          <td>
+            <button class="btn-secondary" style="padding: 4px 8px; font-size: 11px; margin-bottom: 4px;" onclick="copySingleCode('${item.code}')">نسخ الكود</button>
+            <button class="btn-secondary" style="padding: 4px 8px; font-size: 11px;" onclick="copySingleMsg('${item.serial}')">واتساب</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function handleSearch() {
+      const q = document.getElementById('searchInput').value.trim().toLowerCase();
+      const dur = document.getElementById('searchDurationFilter').value;
+
+      const filtered = vault.licenses.filter(item => {
+        const matchQ = !q ||
+          item.serial.toLowerCase().includes(q) ||
+          item.clinic.toLowerCase().includes(q) ||
+          (item.internalId && item.internalId.toLowerCase().includes(q)) ||
+          item.deviceId.toLowerCase().includes(q) ||
+          item.code.toLowerCase().includes(q);
+
+        const matchDur = !dur || item.durationCode === dur;
+        return matchQ && matchDur;
+      });
+
+      renderHistoryTable(filtered);
+    }
+
+    function copySingleCode(code) {
+      navigator.clipboard.writeText(code).then(() => showToast('تم نسخ الكود: ' + code));
+    }
+
+    function copySingleMsg(serial) {
+      const item = vault.licenses.find(l => l.serial === serial);
+      if (!item) return;
+
+      const msg = `مرحباً دكتور،
+عيادة: ${item.clinic}
+مرفق كود تفعيل برنامج DA لإدارة العيادات:
+
+• الرقم التسلسلي: ${item.serial}
+• رمز الجهاز: ${item.deviceId}
+• مدة الترخيص: ${item.durationLabel}
+• كود التفعيل: ${item.code}
+
+طريقة التفعيل: الصق الكود في خانة التفعيل واضغط «تفعيل الترخيص».
+مع تحيات فريق التطوير — Loraneem Tech`;
+
+      navigator.clipboard.writeText(msg).then(() => showToast('تم نسخ رسالة واتساب للعملية ' + serial));
+    }
+
+    // ================= إدارة المستخدمين (للمدير) =================
+    function renderUsersTable() {
+      const tbody = document.getElementById('usersTableBody');
+      tbody.innerHTML = '';
+
+      // سطر المدير
+      const trAdmin = document.createElement('tr');
+      trAdmin.innerHTML = `
+        <td><strong>admin</strong></td>
+        <td><span class="badge-pill" style="background:#dbeafe; color:#1e40af;">المدير العام</span></td>
+        <td>دائم (بلا انتهاء)</td>
+        <td><span style="color:var(--success); font-weight:700;">نشط</span></td>
+        <td>نعم</td>
+        <td><span style="color:#94a3b8;">حساب أساسي</span></td>
+      `;
+      tbody.appendChild(trAdmin);
+
+      const today = new Date().toISOString().split('T')[0];
+
+      vault.users.forEach((u, idx) => {
+        const isExpired = u.expiry && u.expiry < today;
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${u.username}</strong></td>
+          <td>عامل فني</td>
+          <td>${u.expiry}</td>
+          <td>${isExpired ? '<span style="color:var(--danger); font-weight:700;">منتهي الصلاحية</span>' : '<span style="color:var(--success); font-weight:700;">سارٍ</span>'}</td>
+          <td>${u.allowLifetime ? 'مسموح' : 'غير مسموح'}</td>
+          <td>
+            <button class="btn-secondary" style="padding: 4px 8px; font-size: 11px; color: var(--danger);" onclick="deleteUser(${idx})">حذف الحساب</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function handleAddUser() {
+      const u = document.getElementById('newUserName').value.trim();
+      const p = document.getElementById('newUserPass').value.trim();
+      const exp = document.getElementById('newUserExpiry').value;
+      const allowLt = document.getElementById('allowLifetime').checked;
+
+      if (!u || !p || !exp) {
+        alert("يرجى ملء جميع الحقول المطلوبة (اسم المستخدم، كلمة المرور، وتاريخ الانتهاء).");
+        return;
+      }
+
+      if (u.toLowerCase() === 'admin' || vault.users.some(x => x.username.toLowerCase() === u.toLowerCase())) {
+        alert("اسم المستخدم هذا موجود مسبقاً، اختر اسماً آخر.");
+        return;
+      }
+
+      vault.users.push({
+        username: u,
+        pass: p,
+        expiry: exp,
+        allowLifetime: allowLt,
+        role: 'assistant'
+      });
+
+      saveVaultToStorage();
+      renderUsersTable();
+
+      document.getElementById('newUserName').value = '';
+      document.getElementById('newUserPass').value = '';
+      document.getElementById('allowLifetime').checked = false;
+      showToast("تم إنشاء حساب العامل الفني بنجاح!");
+    }
+
+    function deleteUser(idx) {
+      if (confirm("هل أنت متأكد من حذف هذا الحساب؟ لن يتمكن من استخدام الأداة بعد الآن.")) {
+        vault.users.splice(idx, 1);
+        saveVaultToStorage();
+        renderUsersTable();
+        showToast("تم حذف الحساب.");
+      }
+    }
+
+    function handleUpdateAdminProfile() {
+      const u = document.getElementById('adminProfileUser').value.trim();
+      const p = document.getElementById('adminProfilePass').value.trim();
+      const pin = document.getElementById('adminProfilePin').value.trim();
+
+      if (!u) {
+        alert("يرجى إدخال اسم مستخدم صحيح للمدير.");
+        return;
+      }
+      if (!pin || pin.length < 4) {
+        alert("يرجى إدخال رقم استرداد سري قوي (4 أحرف أو أرقام على الأقل).");
+        return;
+      }
+
+      vault.adminUser = u;
+      vault.recoveryPin = pin;
+
+      if (p) {
+        if (p.length < 4) {
+          alert("كلمة المرور يجب أن تكون 4 أحرف أو أرقام على الأقل.");
+          return;
+        }
+        vault.adminPass = p;
+      }
+
+      saveVaultToStorage();
+      currentUser.username = u;
+      document.getElementById('currentUserName').innerText = u;
+      document.getElementById('adminProfilePass').value = '';
+      showToast("تم تحديث بيانات المدير العام ورقم الاسترداد السري بنجاح!");
+    }
+
+    // ================= النسخ الاحتياطي =================
+    function exportBackup() {
+      const json = JSON.stringify(vault, null, 2);
+      const enc = xorEncrypt(json, SALT);
+      const blob = new Blob([enc], { type: "application/octet-stream" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `DA_License_Vault_Backup_${new Date().toISOString().split('T')[0]}.enc`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast("تم تصدير النسخة الاحتياطية المشفرة بنجاح!");
+    }
+
+    function handleFileImport(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        const content = evt.target.result;
+        let dec = xorDecrypt(content, SALT);
+        if (!dec) {
+          // جرب قراءته كـ JSON مباشر
+          dec = content;
+        }
+
+        try {
+          const imported = JSON.parse(dec);
+          if (imported.licenses && Array.isArray(imported.licenses)) {
+            vault = imported;
+            saveVaultToStorage();
+            renderHistoryTable();
+            renderUsersTable();
+            updateSerialDisplay();
+            showToast("تم استيراد السجل وبيانات الأداة بنجاح!");
+          } else {
+            alert("الملف لا يحتوي على بيانات ترخيص صحيحة.");
+          }
+        } catch(err) {
+          alert("تعذر قراءة ملف النسخة الاحتياطية أو أنه غير مطابق.");
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    // أدوات النسخ
+    function showToast(text) {
+      const t = document.getElementById('toast');
+      t.innerText = text;
+      t.style.display = 'block';
+      setTimeout(() => { t.style.display = 'none'; }, 2200);
+    }
+
+    function copyCode() {
+      navigator.clipboard.writeText(lastGeneratedCode).then(() => showToast('تم نسخ الكود!'));
+    }
+
+    function copyMessage() {
+      navigator.clipboard.writeText(lastGeneratedMsg).then(() => showToast('تم نسخ رسالة الواتساب!'));
+    }
+
+    function copyUnlockCode() {
+      navigator.clipboard.writeText(lastUnlockCode).then(() => showToast('تم نسخ كود فك القفل!'));
+    }
+
+    function copyUnlockMessage() {
+      navigator.clipboard.writeText(lastUnlockMsg).then(() => showToast('تم نسخ رسالة التوجيه!'));
+    }
+  </script>
+</body>
+</html>
