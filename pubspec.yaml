@@ -13,6 +13,7 @@ environment:
 # =============================================================================
 dependencies:
   pdf: ^3.11.3
+  excel: ^4.0.6
   printing: ^5.14.2
   flutter:
     sdk: flutter
@@ -45,6 +46,7 @@ dependencies:
 
   # --- سطح المكتب ---
   window_manager: ^0.4.3
+  flutter_local_notifications: ^17.2.3
 
 dev_dependencies:
   flutter_test:
@@ -68,3 +70,4 @@ flutter:
       fonts:
         - asset: assets/fonts/NotoSansArabic-SemiBold.ttf
           weight: 600
+

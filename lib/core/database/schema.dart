@@ -10,7 +10,7 @@ import 'workflow_schema.dart';
 ///  ALTER TABLE داخل [migrate].
 /// ============================================================================
 
-const int kSchemaVersion = 7;
+const int kSchemaVersion = 8;
 
 const String kDbFileName = 'neuro_clinic.db';
 
@@ -306,6 +306,18 @@ Future<void> migrate(Database db, int from, int to) async {
     // يعتمد على جداول الجلسات، لذا نضمن وجودها أولاً (إعادة الدخول آمنة).
     await ensureWorkflowSchema(db);
     await ensureAppointmentKinds(db);
+  }
+  if (from < 8 && to >= 8) {
+    await _addColumnIfMissing(db, 'payments', 'auto_generated', 'INTEGER NOT NULL DEFAULT 0');
+    await _addColumnIfMissing(db, 'payments', 'invoice_no', 'TEXT');
+    await _addColumnIfMissing(db, 'appointments', 'reminder_sent', 'INTEGER NOT NULL DEFAULT 0');
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS reminder_dismissed (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        appointment_id INTEGER NOT NULL UNIQUE,
+        dismissed_at TEXT NOT NULL
+      )
+    ''');
   }
 }
 

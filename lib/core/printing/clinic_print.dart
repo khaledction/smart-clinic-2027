@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
@@ -36,13 +36,13 @@ class ClinicPrint {
           children: [
             pw.Text(
               settings.clinicName.replaceAll('\n', ' '),
-              style: const pw.TextStyle(
+              style: pw.TextStyle(
                 fontSize: 19,
                 fontWeight: pw.FontWeight.bold,
               ),
             ),
             pw.Text(settings.doctorName),
-            pw.Text(title, style: const pw.TextStyle(fontSize: 16)),
+            pw.Text(title, style: pw.TextStyle(fontSize: 16)),
             if (subtitle != null) pw.Text(subtitle),
             pw.Divider(),
           ],
@@ -121,3 +121,4 @@ class ClinicPrint {
     ),
   );
 }
+
