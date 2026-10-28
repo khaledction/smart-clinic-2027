@@ -157,6 +157,30 @@ class ClinicFlowRepository {
           where: 'id = ?',
           whereArgs: [a.id],
         );
+                // V7: فاتورة تلقائية للمعاينة - لا تكرر
+        final existingPay = await tx.query(
+          'payments',
+          where: 'visit_id = ? AND category = ?',
+          whereArgs: [visitId, 'consultation'],
+          limit: 1,
+        );
+        if (existingPay.isEmpty) {
+          final settings = await tx.query('clinic_settings', where: 'id = 1', limit: 1);
+          final fee = (settings.isNotEmpty ? settings.first['default_fee'] as num? : null)?.toDouble() ?? 0;
+          if (fee > 0) {
+            await tx.insert('payments', {
+              'patient_id': a.patientId,
+              'visit_id': visitId,
+              'amount': fee,
+              'category': 'consultation',
+              'method': 'cash',
+              'paid_at': null,
+              'note': 'فاتورة تلقائية - معاينة $dayIso',
+              'auto_generated': 1,
+              'invoice_no': 'INV-${DateTime.now().millisecondsSinceEpoch}',
+            });
+          }
+        }
       } else {
         final name = a.sessionName?.trim() ?? '';
         if (name.isEmpty) throw StateError('حدّد نوع الجلسة أولاً');
@@ -398,9 +422,7 @@ class ClinicFlowRepository {
     final iso = DateFmt.isoDate(day);
     final checkups = await db.rawQuery(
       '''SELECT v.id AS visit_id, v.patient_id, p.full_name, v.chief_complaint,
-                (SELECT pay.amount FROM payments pay
-                  WHERE pay.visit_id = v.id AND pay.category = 'consultation'
-                  LIMIT 1) AS paid_amount
+                (SELECT pay.amount FROM payments pay WHERE pay.visit_id = v.id AND pay.category = 'consultation' AND pay.paid_at IS NOT NULL LIMIT 1) AS paid_amount
          FROM visits v JOIN patients p ON p.id = v.patient_id
          WHERE date(v.completed_at) = ?
            AND (v.visit_category IS NULL OR v.visit_category != 'session')

@@ -1,4 +1,4 @@
-import 'package:sqflite/sqflite.dart';
+﻿import 'package:sqflite/sqflite.dart';
 
 import 'workflow_schema.dart';
 
@@ -216,7 +216,9 @@ const List<String> kCreateStatements = [
     method     TEXT    NOT NULL DEFAULT 'cash'
                        CHECK(method IN ('cash','card','insurance','transfer')),
     paid_at    TEXT,
-    note       TEXT
+    note       TEXT,
+    auto_generated INTEGER NOT NULL DEFAULT 0,
+    invoice_no TEXT
   )
   ''',
   'CREATE INDEX idx_pay_patient ON payments(patient_id)',
@@ -325,3 +327,4 @@ Future<void> migrate(Database db, int from, int to) async {
 Future<void> enableForeignKeys(Database db) async {
   await db.execute('PRAGMA foreign_keys = ON');
 }
+

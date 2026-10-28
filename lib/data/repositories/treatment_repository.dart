@@ -233,11 +233,20 @@ class TreatmentRepository {
   Future<void> payVisit(int id) async {
     final db = await _db;
     await db.transaction((tx) async {
-      if ((await tx.query(
+      final existingConsult = await tx.query(
         'payments',
         where: "visit_id=? AND category='consultation'",
         whereArgs: [id],
-      )).isNotEmpty) {
+      );
+      if (existingConsult.isNotEmpty) {
+        final pay = existingConsult.first;
+        if ((pay['auto_generated'] as int?) == 1 && pay['paid_at'] == null) {
+          await tx.update('payments', {
+            'paid_at': DateTime.now().toIso8601String(),
+            'method': 'cash',
+          }, where: 'id=?', whereArgs: [pay['id']]);
+          return;
+        }
         return;
       }
       // Existing manual payments need review, not an automatic second payment.
