@@ -1,4 +1,4 @@
-import 'dart:convert';
+﻿import 'dart:convert';
 import 'package:bcrypt/bcrypt.dart';
 import 'package:crypto/crypto.dart';
 import 'package:flutter/foundation.dart';
@@ -97,3 +97,4 @@ class DeveloperMode {
 
   static void lock() => unlocked.value = false;
 }
+

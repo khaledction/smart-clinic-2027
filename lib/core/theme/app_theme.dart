@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 
 import 'app_colors.dart';
 import 'app_sizes.dart';
@@ -291,3 +291,4 @@ class AppTheme {
     );
   }
 }
+

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'package:neuro_clinic/main.dart';
@@ -85,3 +85,4 @@ void main() {
     await tester.runAsync(() => AppDatabase.instance.close());
   });
 }
+

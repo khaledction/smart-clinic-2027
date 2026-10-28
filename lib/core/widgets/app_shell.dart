@@ -1,4 +1,4 @@
-import 'shell_nav.dart';
+﻿import 'shell_nav.dart';
 import '../../features/sessions/sessions_screen.dart';
 import '../../features/finance/finance_screen.dart';
 
@@ -17,6 +17,7 @@ import 'clinic_brand.dart';
 import 'confirm_dialog.dart';
 import 'frame_trail.dart';
 import 'window_controls.dart';
+import '../../core/services/reminder_service.dart';
 
 /// الهيكل العام للتطبيق: شريط جانبي (يمين لأن الواجهة RTL) + مساحة المحتوى.
 class AppShell extends StatefulWidget {
@@ -425,6 +426,8 @@ class _FrameBand extends StatelessWidget {
                 ),
               ),
             ),
+            const ReminderBell(),
+            const SizedBox(width: 8),
             const WindowControls(),
           ],
         ),
@@ -432,3 +435,4 @@ class _FrameBand extends StatelessWidget {
     );
   }
 }
+

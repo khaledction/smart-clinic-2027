@@ -1,4 +1,4 @@
-import 'package:sqflite/sqflite.dart';
+﻿import 'package:sqflite/sqflite.dart';
 
 /// Additive and re-entrant. Never reclassifies legacy investigations/payments.
 Future<void> ensureWorkflowSchema(Database db) async {
@@ -117,3 +117,4 @@ Future<void> ensureAppointmentKinds(Database db) async {
     'CREATE INDEX IF NOT EXISTS idx_appt_visit ON appointments(visit_id)',
   );
 }
+

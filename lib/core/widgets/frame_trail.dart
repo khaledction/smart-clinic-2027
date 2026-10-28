@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 
 /// مسار النوافذ المفتوحة (Breadcrumb) للشريط الكحلي العلوي.
 ///
@@ -237,3 +237,4 @@ class _CrumbState extends State<_Crumb> {
     ),
   );
 }
+

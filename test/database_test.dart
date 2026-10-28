@@ -1,4 +1,4 @@
-import 'package:flutter_test/flutter_test.dart';
+﻿import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'package:neuro_clinic/core/database/app_database.dart';
 import 'package:neuro_clinic/core/database/schema.dart';
@@ -94,3 +94,4 @@ void main() {
     expect(await repo.topDiagnoses(), isNotEmpty);
   });
 }
+

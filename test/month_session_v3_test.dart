@@ -1,4 +1,4 @@
-import 'dart:io';
+﻿import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -23,14 +23,14 @@ void main() {
           onCreate: (db, _) => old.createSchema(db),
         ),
       );
-      await db.insert('patients', {'id': 1, 'full_name': 'اختبار'});
+      await db.insert('patients', {'id': 1, 'full_name': 'Ø§Ø®ØªØ¨Ø§Ø±'});
       await db.insert('visits', {
         'id': 1,
         'patient_id': 1,
         'visit_date': '2026-09-20',
         'visit_type': 'procedure',
         'visit_category': 'session',
-        'notes': 'نص قديم',
+        'notes': 'Ù†Øµ Ù‚Ø¯ÙŠÙ…',
       });
       await db.close();
       db = await databaseFactoryFfi.openDatabase(
@@ -42,13 +42,13 @@ void main() {
       );
       final prior = Visit.fromMap((await db.query('visits')).single);
       expect(prior.sessionName, null);
-      expect(prior.notes, 'نص قديم');
+      expect(prior.notes, 'Ù†Øµ Ù‚Ø¯ÙŠÙ…');
       for (final name in [
-        'جلسة سحب فقرات',
-        'جلسة EMS',
-        'أخرى: جلسة مخصصة',
-        // قيمة قديمة محفوظة في قواعد سابقة — يجب أن تظل مقروءة.
-        'جلسة كهرومغناطيسية',
+        'Ø¬Ù„Ø³Ø© Ø³Ø­Ø¨ ÙÙ‚Ø±Ø§Øª',
+        'Ø¬Ù„Ø³Ø© EMS',
+        'Ø£Ø®Ø±Ù‰: Ø¬Ù„Ø³Ø© Ù…Ø®ØµØµØ©',
+        // Ù‚ÙŠÙ…Ø© Ù‚Ø¯ÙŠÙ…Ø© Ù…Ø­ÙÙˆØ¸Ø© ÙÙŠ Ù‚ÙˆØ§Ø¹Ø¯ Ø³Ø§Ø¨Ù‚Ø© â€” ÙŠØ¬Ø¨ Ø£Ù† ØªØ¸Ù„ Ù…Ù‚Ø±ÙˆØ¡Ø©.
+        'Ø¬Ù„Ø³Ø© ÙƒÙ‡Ø±ÙˆÙ…ØºÙ†Ø§Ø·ÙŠØ³ÙŠØ©',
       ]) {
         final v = Visit(
           patientId: 1,
@@ -61,10 +61,10 @@ void main() {
           (await db.query('visits', where: 'id = ?', whereArgs: [id])).single,
         );
         expect(read.sessionName, name);
-        expect(read.copyWith(notes: 'تعديل').sessionName, name);
+        expect(read.copyWith(notes: 'ØªØ¹Ø¯ÙŠÙ„').sessionName, name);
         expect(read.copyWith(visitType: 'new').toMap()['session_name'], null);
       }
-      expect(await db.getVersion(), 7);
+      expect(await db.getVersion(), 8);
     } finally {
       await db?.close();
       await dir.delete(recursive: true);
@@ -75,7 +75,7 @@ void main() {
     (tester) async {
       final now = DateTime.now();
       final old = DateTime(now.year - 1, 12, 5);
-      final oldMonth = 'شهر ${old.year}/12';
+      final oldMonth = 'Ø´Ù‡Ø± ${old.year}/12';
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
@@ -84,37 +84,39 @@ void main() {
                 items: [now, old],
                 dateOf: (d) => d,
                 groupBuilder: (rows) =>
-                    Text(rows.first == now ? 'سجل اليوم' : 'سجل قديم'),
+                    Text(rows.first == now ? 'Ø³Ø¬Ù„ Ø§Ù„ÙŠÙˆÙ…' : 'Ø³Ø¬Ù„ Ù‚Ø¯ÙŠÙ…'),
               ),
             ),
           ),
         ),
       );
       await tester.pumpAndSettle();
-      expect(find.text('سجل اليوم'), findsOneWidget);
-      expect(find.text('سجل قديم'), findsNothing);
+      expect(find.text('Ø³Ø¬Ù„ Ø§Ù„ÙŠÙˆÙ…'), findsOneWidget);
+      expect(find.text('Ø³Ø¬Ù„ Ù‚Ø¯ÙŠÙ…'), findsNothing);
       await tester.tap(find.textContaining(oldMonth));
       await tester.pumpAndSettle();
-      expect(find.text('سجل قديم'), findsNothing);
-      await tester.tap(find.text('يوم ${old.year}/12/05'));
+      expect(find.text('Ø³Ø¬Ù„ Ù‚Ø¯ÙŠÙ…'), findsNothing);
+      await tester.tap(find.text('ÙŠÙˆÙ… ${old.year}/12/05'));
       await tester.pumpAndSettle();
-      expect(find.text('سجل قديم'), findsOneWidget);
+      expect(find.text('Ø³Ø¬Ù„ Ù‚Ø¯ÙŠÙ…'), findsOneWidget);
       await tester.tap(find.textContaining(oldMonth));
       await tester.pumpAndSettle();
-      expect(find.text('سجل قديم'), findsNothing);
+      expect(find.text('Ø³Ø¬Ù„ Ù‚Ø¯ÙŠÙ…'), findsNothing);
       await tester.tap(find.textContaining(oldMonth));
       await tester.pumpAndSettle();
-      expect(find.text('سجل قديم'), findsOneWidget);
+      expect(find.text('Ø³Ø¬Ù„ Ù‚Ø¯ÙŠÙ…'), findsOneWidget);
       await tester.tap(find.textContaining(oldMonth));
       await tester.pumpAndSettle();
       final nowMonth =
-          'شهر ${now.year}/${now.month.toString().padLeft(2, '0')}';
+          'Ø´Ù‡Ø± ${now.year}/${now.month.toString().padLeft(2, '0')}';
       await tester.tap(find.textContaining(nowMonth));
       await tester.pumpAndSettle();
-      expect(find.text('سجل اليوم'), findsNothing);
-      expect(find.text('سجل قديم'), findsNothing);
+      expect(find.text('Ø³Ø¬Ù„ Ø§Ù„ÙŠÙˆÙ…'), findsNothing);
+      expect(find.text('Ø³Ø¬Ù„ Ù‚Ø¯ÙŠÙ…'), findsNothing);
       expect(tester.takeException(), null);
       await tester.pumpWidget(const SizedBox());
     },
   );
 }
+
+

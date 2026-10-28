@@ -1,0 +1,69 @@
+﻿00:00 +0: loading E:/projects/final-projects/smart-clinic-2027/test/app_test.dart
+00:00 +0: Arabic login and desktop dashboard render
+ΓòÉΓòÉΓòí EXCEPTION CAUGHT BY RENDERING LIBRARY Γò₧ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+The following assertion was thrown during layout:
+A RenderFlex overflowed by 125 pixels on the right.
+
+The relevant error-causing widget was:
+  Row
+  Row:file:///E:/projects/final-projects/smart-clinic-2027/lib/features/activation/activation_screen.dart:305:21
+
+The overflowing RenderFlex has an orientation of Axis.horizontal.
+The edge of the RenderFlex that is overflowing has been marked in the rendering with a yellow and
+black striped pattern. This is usually caused by the contents being too big for the RenderFlex.
+Consider applying a flex factor (e.g. using an Expanded widget) to force the children of the
+RenderFlex to fit within the available space instead of being sized to their natural size.
+This is considered an error condition because it indicates that there is content that cannot be
+seen. If the content is legitimately bigger than the available space, consider clipping it with a
+ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex,
+like a ListView.
+The specific RenderFlex in question is: RenderFlex#df593 relayoutBoundary=up21 OVERFLOWING:
+  creator: Row ΓåÉ Column ΓåÉ Padding ΓåÉ Semantics ΓåÉ DefaultTextStyle ΓåÉ AnimatedDefaultTextStyle ΓåÉ
+    _InkFeatures-[GlobalKey#72be4 ink renderer] ΓåÉ NotificationListener<LayoutChangedNotification> ΓåÉ
+    CustomPaint ΓåÉ _ShapeBorderPaint ΓåÉ PhysicalShape ΓåÉ _MaterialInterior ΓåÉ Γï»
+  parentData: offset=Offset(0.0, 316.0); flex=null; fit=null (can use size)
+  constraints: BoxConstraints(w=616.0, 0.0<=h<=Infinity)
+  size: Size(616.0, 22.0)
+  direction: horizontal
+  mainAxisAlignment: start
+  mainAxisSize: max
+  crossAxisAlignment: center
+  textDirection: rtl
+  verticalDirection: down
+  spacing: 0.0
+ΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñ
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+ΓòÉΓòÉΓòí EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK Γò₧ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextWidgetFinder:<Found 0 widgets with text "╪»╪«┘ê┘ä": []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///E:/projects/final-projects/smart-clinic-2027/test/app_test.dart:29:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///E:/projects/final-projects/smart-clinic-2027/test/app_test.dart line 29
+The test description was:
+  Arabic login and desktop dashboard render
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+ΓòÉΓòÉΓòí EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK Γò₧ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+The following message was thrown:
+Multiple exceptions (2) were detected during the running of the current test, and at least one was
+unexpected.
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+00:13 +0 -1: Arabic login and desktop dashboard render [E]
+  Test failed. See exception logs above.
+  The test description was: Arabic login and desktop dashboard render
+  
+00:13 +0 -1: Some tests failed.
+
+Failing tests:
+  E:/projects/final-projects/smart-clinic-2027/test/app_test.dart: Arabic login and desktop dashboard render

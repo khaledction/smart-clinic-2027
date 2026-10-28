@@ -1,4 +1,4 @@
-import 'dart:io';
+﻿import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
@@ -84,7 +84,7 @@ void main() {
           onUpgrade: migrate,
         ),
       );
-      expect(await legacy.getVersion(), 7);
+      expect(await legacy.getVersion(), 8);
       final appt = (await legacy.query('appointments')).single;
       expect(appt['reason'], 'سبب قديم');
       expect(appt['kind'], isNull);
@@ -340,3 +340,5 @@ void main() {
     );
   });
 }
+
+

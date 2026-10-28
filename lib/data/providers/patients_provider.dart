@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+﻿import 'package:flutter/foundation.dart';
 
 import '../models/patient.dart';
 import '../repositories/patient_repository.dart';
@@ -119,3 +119,4 @@ class PatientsProvider extends ChangeNotifier {
     await load();
   }
 }
+

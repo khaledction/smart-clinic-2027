@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -659,3 +659,4 @@ class DeviceActivation {
     return 'DA-UNLOCK-$tok-${sig.substring(0, 4)}-${sig.substring(4, 8)}-${sig.substring(8, 12)}';
   }
 }
+

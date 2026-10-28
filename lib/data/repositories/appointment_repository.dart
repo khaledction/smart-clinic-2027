@@ -1,4 +1,4 @@
-import 'package:sqflite/sqflite.dart';
+﻿import 'package:sqflite/sqflite.dart';
 
 import '../../core/database/app_database.dart';
 import '../../core/utils/date_fmt.dart';
@@ -142,3 +142,4 @@ class AppointmentRepository {
     return (rows.first['total'] as num?)?.toDouble() ?? 0;
   }
 }
+

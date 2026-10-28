@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 
@@ -64,3 +64,4 @@ class SettingsProvider extends ChangeNotifier {
     notifyListeners();
   }
 }
+

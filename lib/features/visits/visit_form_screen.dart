@@ -1,4 +1,4 @@
-import '../../core/widgets/section_navigator.dart';
+﻿import '../../core/widgets/section_navigator.dart';
 import '../../core/widgets/patient_link.dart';
 
 import 'package:flutter/material.dart';
@@ -1151,3 +1151,4 @@ class _PrescriptionRow {
     duration.dispose();
   }
 }
+

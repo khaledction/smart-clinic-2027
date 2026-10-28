@@ -1,4 +1,4 @@
-import '../../core/printing/clinic_print.dart';
+﻿import '../../core/printing/clinic_print.dart';
 import '../../data/repositories/treatment_repository.dart';
 import '../sessions/sessions_screen.dart';
 import '../investigations/investigations_screen.dart';
@@ -565,3 +565,4 @@ class _PlanActionsCard extends StatelessWidget {
     },
   );
 }
+

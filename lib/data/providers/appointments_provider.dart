@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+﻿import 'package:flutter/foundation.dart';
 
 import '../models/appointment.dart';
 import '../repositories/appointment_repository.dart';
@@ -90,3 +90,4 @@ class AppointmentsProvider extends ChangeNotifier {
     await load();
   }
 }
+

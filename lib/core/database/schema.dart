@@ -1,4 +1,4 @@
-import 'package:sqflite/sqflite.dart';
+﻿import 'package:sqflite/sqflite.dart';
 
 import 'workflow_schema.dart';
 
@@ -10,7 +10,7 @@ import 'workflow_schema.dart';
 ///  ALTER TABLE داخل [migrate].
 /// ============================================================================
 
-const int kSchemaVersion = 7;
+const int kSchemaVersion = 8;
 
 const String kDbFileName = 'neuro_clinic.db';
 
@@ -216,7 +216,9 @@ const List<String> kCreateStatements = [
     method     TEXT    NOT NULL DEFAULT 'cash'
                        CHECK(method IN ('cash','card','insurance','transfer')),
     paid_at    TEXT,
-    note       TEXT
+    note       TEXT,
+    auto_generated INTEGER NOT NULL DEFAULT 0,
+    invoice_no TEXT
   )
   ''',
   'CREATE INDEX idx_pay_patient ON payments(patient_id)',
@@ -307,9 +309,23 @@ Future<void> migrate(Database db, int from, int to) async {
     await ensureWorkflowSchema(db);
     await ensureAppointmentKinds(db);
   }
+  if (from < 8 && to >= 8) {
+    await _addColumnIfMissing(db, 'payments', 'auto_generated', 'INTEGER NOT NULL DEFAULT 0');
+    await _addColumnIfMissing(db, 'payments', 'invoice_no', 'TEXT');
+    await _addColumnIfMissing(db, 'appointments', 'reminder_sent', 'INTEGER NOT NULL DEFAULT 0');
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS reminder_dismissed (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        appointment_id INTEGER NOT NULL UNIQUE,
+        dismissed_at TEXT NOT NULL
+      )
+    ''');
+  }
 }
 
 /// يفعّل قيود المفاتيح الأجنبية (SQLite يعطّلها افتراضياً).
 Future<void> enableForeignKeys(Database db) async {
   await db.execute('PRAGMA foreign_keys = ON');
 }
+
+

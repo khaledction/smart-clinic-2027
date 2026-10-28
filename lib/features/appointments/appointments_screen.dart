@@ -1,4 +1,4 @@
-import '../../core/widgets/patient_link.dart';
+﻿import '../../core/widgets/patient_link.dart';
 import '../../core/widgets/day_groups.dart';
 
 import 'package:flutter/material.dart';
@@ -437,3 +437,4 @@ class _AppointmentDialogState extends State<AppointmentDialog> {
     );
   }
 }
+

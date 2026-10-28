@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart' show debugPrint;
+﻿import 'package:flutter/foundation.dart' show debugPrint;
 
 import 'dart:math';
 
@@ -138,3 +138,4 @@ Future<void> seedDemoData(Database db) async {
   }
   debugPrint('✅ تم إدراج بيانات تجريبية');
 }
+

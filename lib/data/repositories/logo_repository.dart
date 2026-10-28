@@ -1,4 +1,4 @@
-import 'dart:io';
+﻿import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:path/path.dart' as p;
@@ -46,3 +46,4 @@ class LogoRepository {
     if (await f.exists()) await f.delete();
   }
 }
+

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../core/services/developer_mode.dart';
@@ -902,3 +902,5 @@ class _AlertBanner extends StatelessWidget {
     );
   }
 }
+
+

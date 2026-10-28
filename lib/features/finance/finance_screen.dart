@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 
 import '../../core/database/app_database.dart';
 import '../../core/theme/app_colors.dart';
@@ -587,3 +587,4 @@ class _FinanceScreenState extends State<FinanceScreen> {
     child: Text('$label: $value', style: const TextStyle(fontSize: 12.5)),
   );
 }
+

@@ -1,4 +1,4 @@
-import 'dart:io';
+﻿import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -649,3 +649,4 @@ class _AttachmentList extends StatelessWidget {
     );
   }
 }
+

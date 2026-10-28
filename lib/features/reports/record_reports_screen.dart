@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 
 import '../../core/database/app_database.dart';
 import '../../core/printing/clinic_print.dart';
@@ -259,3 +259,4 @@ class _RecordReportsScreenState extends State<RecordReportsScreen> {
     ),
   );
 }
+

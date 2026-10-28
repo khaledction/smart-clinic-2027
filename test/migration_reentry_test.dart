@@ -1,4 +1,4 @@
-import 'dart:io';
+﻿import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
@@ -25,12 +25,12 @@ void main() {
       await db.insert('users', {
         'username': 'doctor-test',
         'password_hash': 'unchanged-hash-test',
-        'full_name': 'اختبار',
+        'full_name': 'Ø§Ø®ØªØ¨Ø§Ø±',
         'role': 'doctor',
       });
       await db.insert('patients', {
         'id': 1,
-        'full_name': 'اختبار',
+        'full_name': 'Ø§Ø®ØªØ¨Ø§Ø±',
         'age_years': 42,
       });
       await db.insert('visits', {
@@ -39,8 +39,8 @@ void main() {
         'visit_date': '2026-09-21',
         'visit_type': 'procedure',
         'visit_category': 'session',
-        'session_name': 'جلسة سحب فقرات',
-        'notes': 'يجب الحفاظ على النص',
+        'session_name': 'Ø¬Ù„Ø³Ø© Ø³Ø­Ø¨ ÙÙ‚Ø±Ø§Øª',
+        'notes': 'ÙŠØ¬Ø¨ Ø§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ø§Ù„Ù†Øµ',
       });
       await db.insert('payments', {
         'patient_id': 1,
@@ -60,7 +60,7 @@ void main() {
           onConfigure: enableForeignKeys,
         ),
       );
-      expect(await db.getVersion(), 7);
+      expect(await db.getVersion(), 8);
       expect(
         await db.query('patients', columns: patientsBefore.first.keys.toList()),
         patientsBefore,
@@ -96,3 +96,5 @@ void main() {
     }
   });
 }
+
+

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../theme/app_colors.dart';
@@ -205,3 +205,4 @@ class AppNumberField extends StatelessWidget {
 
   static String? format(num? v) => v == null ? null : _int.format(v);
 }
+

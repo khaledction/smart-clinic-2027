@@ -1,4 +1,4 @@
-import 'dart:convert';
+﻿import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/gestures.dart';
@@ -317,3 +317,4 @@ void main() {
     await tester.runAsync(() => AppDatabase.instance.close());
   });
 }
+

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../data/providers/session_provider.dart';
@@ -416,3 +416,4 @@ class _PatientFormScreenState extends State<PatientFormScreen> {
   Widget _field(double fw, Widget child) =>
       SizedBox(width: fw, child: child);
 }
+

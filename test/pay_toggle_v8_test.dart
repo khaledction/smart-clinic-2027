@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:neuro_clinic/core/theme/app_colors.dart';
 import 'package:neuro_clinic/core/widgets/paid_widgets.dart';
@@ -102,3 +102,4 @@ void main() {
     expect(calls, 0);
   });
 }
+

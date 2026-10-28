@@ -1,4 +1,4 @@
-import '../../core/utils/date_fmt.dart';
+﻿import '../../core/utils/date_fmt.dart';
 
 /// زيارة (كشف) واحدة للمريض.
 class Visit {
@@ -392,3 +392,4 @@ class Prescription {
     notes: notes ?? this.notes,
   );
 }
+
