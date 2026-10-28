@@ -1,4 +1,4 @@
-﻿import 'shell_nav.dart';
+import 'shell_nav.dart';
 import '../../features/sessions/sessions_screen.dart';
 import '../../features/finance/finance_screen.dart';
 
@@ -435,4 +435,3 @@ class _FrameBand extends StatelessWidget {
     );
   }
 }
-
