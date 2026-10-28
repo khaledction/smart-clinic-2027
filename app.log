@@ -1,0 +1,209 @@
+﻿00:00 +0: loading E:/projects/final-projects/smart-clinic-2027/test/app_test.dart
+00:00 +0: Arabic login and desktop dashboard render
+ΓòÉΓòÉΓòí EXCEPTION CAUGHT BY RENDERING LIBRARY Γò₧ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+The following assertion was thrown during layout:
+A RenderFlex overflowed by 125 pixels on the right.
+
+The relevant error-causing widget was:
+  Row
+  Row:file:///E:/projects/final-projects/smart-clinic-2027/lib/features/activation/activation_screen.dart:305:21
+
+The overflowing RenderFlex has an orientation of Axis.horizontal.
+The edge of the RenderFlex that is overflowing has been marked in the rendering with a yellow and
+black striped pattern. This is usually caused by the contents being too big for the RenderFlex.
+Consider applying a flex factor (e.g. using an Expanded widget) to force the children of the
+RenderFlex to fit within the available space instead of being sized to their natural size.
+This is considered an error condition because it indicates that there is content that cannot be
+seen. If the content is legitimately bigger than the available space, consider clipping it with a
+ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex,
+like a ListView.
+The specific RenderFlex in question is: RenderFlex#5547a relayoutBoundary=up21 OVERFLOWING:
+  creator: Row ΓåÉ Column ΓåÉ Padding ΓåÉ Semantics ΓåÉ DefaultTextStyle ΓåÉ AnimatedDefaultTextStyle ΓåÉ
+    _InkFeatures-[GlobalKey#75882 ink renderer] ΓåÉ NotificationListener<LayoutChangedNotification> ΓåÉ
+    CustomPaint ΓåÉ _ShapeBorderPaint ΓåÉ PhysicalShape ΓåÉ _MaterialInterior ΓåÉ Γï»
+  parentData: offset=Offset(0.0, 316.0); flex=null; fit=null (can use size)
+  constraints: BoxConstraints(w=616.0, 0.0<=h<=Infinity)
+  size: Size(616.0, 22.0)
+  direction: horizontal
+  mainAxisAlignment: start
+  mainAxisSize: max
+  crossAxisAlignment: center
+  textDirection: rtl
+  verticalDirection: down
+  spacing: 0.0
+ΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñΓùóΓùñ
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+ΓòÉΓòÉΓòí EXCEPTION CAUGHT BY IMAGE RESOURCE SERVICE Γò₧ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+The following assertion was thrown resolving an image codec:
+Unable to load asset: "assets/images/smart-clinic.png".
+The asset does not exist or has empty data.
+
+When the exception was thrown, this was the stack:
+#0      PlatformAssetBundle.load (package:flutter/src/services/asset_bundle.dart:340:7)
+#1      PlatformAssetBundle.loadBuffer (package:flutter/src/services/asset_bundle.dart:367:36)
+#2      AssetBundleImageProvider._loadAsync (package:flutter/src/painting/image_provider.dart:787:33)
+#3      AssetBundleImageProvider.loadImage (package:flutter/src/painting/image_provider.dart:747:14)
+#4      ImageProvider.resolveStreamForKey.<anonymous closure> (package:flutter/src/painting/image_provider.dart:550:39)
+#5      ImageCache.putIfAbsent (package:flutter/src/painting/image_cache.dart:368:22)
+#6      ImageProvider.resolveStreamForKey (package:flutter/src/painting/image_provider.dart:547:81)
+#7      ScrollAwareImageProvider.resolveStreamForKey (package:flutter/src/widgets/scroll_aware_image_provider.dart:105:19)
+#8      ImageProvider.resolve.<anonymous closure> (package:flutter/src/painting/image_provider.dart:383:9)
+#9      ImageProvider._createErrorHandlerAndKey.<anonymous closure> (package:flutter/src/painting/image_provider.dart:503:28)
+#10     SynchronousFuture.then (package:flutter/src/foundation/synchronous_future.dart:44:27)
+#11     ImageProvider._createErrorHandlerAndKey (package:flutter/src/painting/image_provider.dart:500:10)
+#12     ImageProvider.resolve (package:flutter/src/painting/image_provider.dart:380:5)
+#13     _ImageState._resolveImage (package:flutter/src/widgets/image.dart:1198:44)
+#14     _ImageState.didChangeDependencies (package:flutter/src/widgets/image.dart:1145:5)
+#15     StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:5981:11)
+#16     ComponentElement.mount (package:flutter/src/widgets/framework.dart:5806:5)
+...     Normal element mounting (4 frames)
+#20     Element.inflateWidget (package:flutter/src/widgets/framework.dart:4600:20)
+#21     MultiChildRenderObjectElement.inflateWidget (package:flutter/src/widgets/framework.dart:7277:36)
+#22     MultiChildRenderObjectElement.mount (package:flutter/src/widgets/framework.dart:7292:32)
+...     Normal element mounting (27 frames)
+#49     Element.inflateWidget (package:flutter/src/widgets/framework.dart:4600:20)
+#50     MultiChildRenderObjectElement.inflateWidget (package:flutter/src/widgets/framework.dart:7277:36)
+#51     MultiChildRenderObjectElement.mount (package:flutter/src/widgets/framework.dart:7292:32)
+...     Normal element mounting (49 frames)
+#100    Element.inflateWidget (package:flutter/src/widgets/framework.dart:4600:20)
+#101    MultiChildRenderObjectElement.inflateWidget (package:flutter/src/widgets/framework.dart:7277:36)
+#102    MultiChildRenderObjectElement.mount (package:flutter/src/widgets/framework.dart:7292:32)
+...     Normal element mounting (384 frames)
+#486    Element.inflateWidget (package:flutter/src/widgets/framework.dart:4600:20)
+#487    MultiChildRenderObjectElement.inflateWidget (package:flutter/src/widgets/framework.dart:7277:36)
+#488    MultiChildRenderObjectElement.mount (package:flutter/src/widgets/framework.dart:7292:32)
+...     Normal element mounting (476 frames)
+#964    _InheritedProviderScopeElement.mount (package:provider/src/inherited_provider.dart:424:11)
+...     Normal element mounting (7 frames)
+#971    _InheritedProviderScopeElement.mount (package:provider/src/inherited_provider.dart:424:11)
+...     Normal element mounting (7 frames)
+#978    _InheritedProviderScopeElement.mount (package:provider/src/inherited_provider.dart:424:11)
+...     Normal element mounting (7 frames)
+#985    _InheritedProviderScopeElement.mount (package:provider/src/inherited_provider.dart:424:11)
+...     Normal element mounting (7 frames)
+#992    SingleChildWidgetElementMixin.mount (package:nested/nested.dart:222:11)
+...     Normal element mounting (7 frames)
+#999    _NestedHookElement.mount (package:nested/nested.dart:187:11)
+...     Normal element mounting (7 frames)
+#1006   SingleChildWidgetElementMixin.mount (package:nested/nested.dart:222:11)
+...     Normal element mounting (7 frames)
+#1013   Element.inflateWidget (package:flutter/src/widgets/framework.dart:4600:20)
+#1014   Element.updateChild (package:flutter/src/widgets/framework.dart:4066:20)
+#1015   ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5854:16)
+#1016   Element.rebuild (package:flutter/src/widgets/framework.dart:5542:7)
+#1017   ProxyElement.update (package:flutter/src/widgets/framework.dart:6162:5)
+#1018   _InheritedNotifierElement.update (package:flutter/src/widgets/inherited_notifier.dart:108:11)
+#1019   Element.updateChild (package:flutter/src/widgets/framework.dart:4050:15)
+#1020   ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5854:16)
+#1021   StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5995:11)
+#1022   Element.rebuild (package:flutter/src/widgets/framework.dart:5542:7)
+#1023   StatefulElement.update (package:flutter/src/widgets/framework.dart:6020:5)
+#1024   Element.updateChild (package:flutter/src/widgets/framework.dart:4050:15)
+#1025   ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5854:16)
+#1026   Element.rebuild (package:flutter/src/widgets/framework.dart:5542:7)
+#1027   ProxyElement.update (package:flutter/src/widgets/framework.dart:6162:5)
+#1028   _InheritedNotifierElement.update (package:flutter/src/widgets/inherited_notifier.dart:108:11)
+#1029   Element.updateChild (package:flutter/src/widgets/framework.dart:4050:15)
+#1030   ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5854:16)
+#1031   StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5995:11)
+#1032   Element.rebuild (package:flutter/src/widgets/framework.dart:5542:7)
+#1033   StatefulElement.update (package:flutter/src/widgets/framework.dart:6020:5)
+#1034   Element.updateChild (package:flutter/src/widgets/framework.dart:4050:15)
+#1035   ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5854:16)
+#1036   StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5995:11)
+#1037   Element.rebuild (package:flutter/src/widgets/framework.dart:5542:7)
+#1038   StatefulElement.update (package:flutter/src/widgets/framework.dart:6020:5)
+#1039   Element.updateChild (package:flutter/src/widgets/framework.dart:4050:15)
+#1040   ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5854:16)
+#1041   Element.rebuild (package:flutter/src/widgets/framework.dart:5542:7)
+#1042   ProxyElement.update (package:flutter/src/widgets/framework.dart:6162:5)
+#1043   Element.updateChild (package:flutter/src/widgets/framework.dart:4050:15)
+#1044   ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5854:16)
+#1045   StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5995:11)
+#1046   Element.rebuild (package:flutter/src/widgets/framework.dart:5542:7)
+#1047   StatefulElement.update (package:flutter/src/widgets/framework.dart:6020:5)
+#1048   Element.updateChild (package:flutter/src/widgets/framework.dart:4050:15)
+#1049   ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5854:16)
+#1050   Element.rebuild (package:flutter/src/widgets/framework.dart:5542:7)
+#1051   ProxyElement.update (package:flutter/src/widgets/framework.dart:6162:5)
+#1052   Element.updateChild (package:flutter/src/widgets/framework.dart:4050:15)
+#1053   ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5854:16)
+#1054   Element.rebuild (package:flutter/src/widgets/framework.dart:5542:7)
+#1055   ProxyElement.update (package:flutter/src/widgets/framework.dart:6162:5)
+#1056   Element.updateChild (package:flutter/src/widgets/framework.dart:4050:15)
+#1057   _RawViewElement._updateChild (package:flutter/src/widgets/view.dart:488:16)
+#1058   _RawViewElement.update (package:flutter/src/widgets/view.dart:575:5)
+#1059   Element.updateChild (package:flutter/src/widgets/framework.dart:4050:15)
+#1060   ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5854:16)
+#1061   Element.rebuild (package:flutter/src/widgets/framework.dart:5542:7)
+#1062   StatelessElement.update (package:flutter/src/widgets/framework.dart:5908:5)
+#1063   Element.updateChild (package:flutter/src/widgets/framework.dart:4050:15)
+#1064   ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5854:16)
+#1065   StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5995:11)
+#1066   Element.rebuild (package:flutter/src/widgets/framework.dart:5542:7)
+#1067   StatefulElement.update (package:flutter/src/widgets/framework.dart:6020:5)
+#1068   Element.updateChild (package:flutter/src/widgets/framework.dart:4050:15)
+#1069   RootElement._rebuild (package:flutter/src/widgets/binding.dart:2091:16)
+#1070   RootElement.update (package:flutter/src/widgets/binding.dart:2069:5)
+#1071   RootElement.performRebuild (package:flutter/src/widgets/binding.dart:2083:7)
+#1072   Element.rebuild (package:flutter/src/widgets/framework.dart:5542:7)
+#1073   BuildScope._tryRebuild (package:flutter/src/widgets/framework.dart:2763:15)
+#1074   BuildScope._flushDirtyElements (package:flutter/src/widgets/framework.dart:2820:11)
+#1075   BuildOwner.buildScope (package:flutter/src/widgets/framework.dart:3124:18)
+#1076   AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:2432:19)
+#1077   RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:558:5)
+#1078   SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1430:15)
+#1079   SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1345:9)
+#1080   AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:2261:9)
+#1083   TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#1084   AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:2250:27)
+#1085   WidgetTester.pumpWidget.<anonymous closure> (package:flutter_test/src/widget_tester.dart:598:22)
+#1088   TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#1089   WidgetTester.pumpWidget (package:flutter_test/src/widget_tester.dart:595:27)
+#1090   main.<anonymous closure> (file:///E:/projects/final-projects/smart-clinic-2027/test/app_test.dart:24:18)
+<asynchronous suspension>
+#1091   testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#1092   TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 5 frames from dart:async and package:stack_trace)
+
+Image provider: AssetImage(bundle: null, name: "assets/images/smart-clinic.png")
+Image key: AssetBundleImageKey(bundle: PlatformAssetBundle#410d4(), name:
+  "assets/images/smart-clinic.png", scale: 1.0)
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+ΓòÉΓòÉΓòí EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK Γò₧ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextWidgetFinder:<Found 0 widgets with text "╪»╪«┘ê┘ä": []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///E:/projects/final-projects/smart-clinic-2027/test/app_test.dart:29:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///E:/projects/final-projects/smart-clinic-2027/test/app_test.dart line 29
+The test description was:
+  Arabic login and desktop dashboard render
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+ΓòÉΓòÉΓòí EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK Γò₧ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+The following message was thrown:
+Multiple exceptions (3) were detected during the running of the current test, and at least one was
+unexpected.
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+00:17 +0 -1: Arabic login and desktop dashboard render [E]
+  Test failed. See exception logs above.
+  The test description was: Arabic login and desktop dashboard render
+  
+00:17 +0 -1: Some tests failed.
+
+Failing tests:
+  E:/projects/final-projects/smart-clinic-2027/test/app_test.dart: Arabic login and desktop dashboard render

@@ -328,3 +328,4 @@ Future<void> enableForeignKeys(Database db) async {
   await db.execute('PRAGMA foreign_keys = ON');
 }
 
+

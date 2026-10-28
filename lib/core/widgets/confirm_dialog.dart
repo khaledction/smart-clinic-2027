@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 
 /// نافذة تأكيد بسيطة. تُعيد true إذا أكّد المستخدم.
 class ConfirmDialog {
@@ -36,3 +36,4 @@ class ConfirmDialog {
     return result ?? false;
   }
 }
+

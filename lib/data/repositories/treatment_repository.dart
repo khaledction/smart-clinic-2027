@@ -1,4 +1,4 @@
-import 'package:sqflite/sqflite.dart';
+﻿import 'package:sqflite/sqflite.dart';
 
 import '../../core/database/app_database.dart';
 
@@ -327,3 +327,4 @@ class TreatmentRepository {
     });
   }
 }
+

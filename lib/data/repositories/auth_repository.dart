@@ -1,4 +1,4 @@
-import 'package:bcrypt/bcrypt.dart';
+﻿import 'package:bcrypt/bcrypt.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../../core/database/app_database.dart';
@@ -86,3 +86,4 @@ class AuthRepository {
     return db.delete('users', where: 'id = ?', whereArgs: [userId]);
   }
 }
+

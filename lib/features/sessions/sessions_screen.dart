@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_sizes.dart';
@@ -813,3 +813,4 @@ class _SessionsScreenState extends State<SessionsScreen> {
     ),
   );
 }
+

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 
 /// شريحة ملوّنة صغيرة لعرض الحالة.
 class StatusChip extends StatelessWidget {
@@ -27,3 +27,4 @@ class StatusChip extends StatelessWidget {
     );
   }
 }
+

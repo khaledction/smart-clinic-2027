@@ -1,4 +1,4 @@
-import 'record_reports_screen.dart';
+﻿import 'record_reports_screen.dart';
 
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 
 import '../../core/theme/app_colors.dart';
 import '../../core/utils/csv_exporter.dart';
+import '../../core/services/report_export_service.dart';
 import '../../core/utils/date_fmt.dart';
 import '../../core/widgets/empty_state.dart';
 import '../../core/widgets/section_card.dart';
@@ -466,6 +467,10 @@ class _ReportsScreenState extends State<ReportsScreen> {
                   icon: const Icon(Icons.table_view_outlined, size: 17),
                   label: const Text('تصدير الزيارات CSV'),
                 ),
+                const SizedBox(width: 8),
+                FilledButton.icon(icon: const Icon(Icons.picture_as_pdf_outlined), label: const Text('PDF'), onPressed: () => ReportExportService.exportDailyPdf(context, DateTime.now())),
+                const SizedBox(width: 8),
+                FilledButton.icon(icon: const Icon(Icons.table_chart_outlined), label: const Text('Excel'), onPressed: () => ReportExportService.exportDailyExcel(context, DateTime.now())),
                 if (_from != null)
                   TextButton(
                     onPressed: () => setState(() {
@@ -529,3 +534,4 @@ class _ReportsScreenState extends State<ReportsScreen> {
     );
   }
 }
+

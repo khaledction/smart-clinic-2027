@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 
 import '../theme/app_colors.dart';
 
@@ -185,3 +185,4 @@ class SectionNavigatorState extends State<SectionNavigator> {
     },
   );
 }
+

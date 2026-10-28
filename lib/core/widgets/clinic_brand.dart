@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../data/providers/settings_provider.dart';
@@ -35,7 +35,7 @@ class ClinicLogo extends StatelessWidget {
     );
     final Widget fallback = ClipOval(
       child: Image.asset(
-        'assets/images/smart-clinic.png',
+        'assets/images/smart-clinic-2027.png',
         fit: BoxFit.cover,
         errorBuilder: (context, error, stackTrace) => iconFallback,
       ),
@@ -359,3 +359,5 @@ class BrandedAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 }
+
+

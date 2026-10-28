@@ -1,4 +1,4 @@
-import 'dart:io';
+﻿import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:file_picker/file_picker.dart';
@@ -1142,3 +1142,4 @@ class _ClinicLogoSettingsState extends State<ClinicLogoSettings> {
     );
   }
 }
+

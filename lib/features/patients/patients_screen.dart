@@ -1,4 +1,4 @@
-import '../../core/widgets/day_groups.dart';
+﻿import '../../core/widgets/day_groups.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -296,3 +296,4 @@ class StatusChipInline extends StatelessWidget {
     style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: color),
   );
 }
+

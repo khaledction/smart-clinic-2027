@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 
 import '../../core/services/device_activation.dart';
 import '../../core/services/password_recovery.dart';
@@ -329,3 +329,4 @@ class _ContactButton extends StatelessWidget {
     );
   }
 }
+

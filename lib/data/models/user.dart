@@ -1,4 +1,4 @@
-/// مستخدم النظام: طبيب / سكرتيرة (استقبال) / مدير.
+﻿/// مستخدم النظام: طبيب / سكرتيرة (استقبال) / مدير.
 class User {
   const User({
     this.id,
@@ -123,3 +123,4 @@ class ClinicSettings {
     footerNote: footerNote ?? this.footerNote,
   );
 }
+

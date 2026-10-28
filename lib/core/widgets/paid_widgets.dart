@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 
 import '../theme/app_colors.dart';
 import '../theme/app_sizes.dart';
@@ -165,3 +165,4 @@ class _PayToggleState extends State<PayToggle> {
     return tip == null ? button : Tooltip(message: tip, child: button);
   }
 }
+

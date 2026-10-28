@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 
 import '../../core/theme/app_colors.dart';
 import '../../core/utils/date_fmt.dart';
@@ -440,3 +440,4 @@ class _PatientSummaryLoaderState extends State<PatientSummaryLoader> {
     },
   );
 }
+

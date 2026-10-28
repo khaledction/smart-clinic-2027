@@ -1,4 +1,4 @@
-import '../../core/widgets/section_navigator.dart';
+﻿import '../../core/widgets/section_navigator.dart';
 import '../sessions/sessions_screen.dart';
 import '../investigations/investigations_screen.dart';
 import '../../core/widgets/day_groups.dart';
@@ -892,3 +892,4 @@ class _PatientDetailScreenState extends State<PatientDetailScreen> {
     ),
   );
 }
+

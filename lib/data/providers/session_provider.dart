@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+﻿import 'package:flutter/foundation.dart';
 
 import '../../core/services/developer_mode.dart';
 import '../models/user.dart';
@@ -57,3 +57,4 @@ class SessionProvider extends ChangeNotifier {
     notifyListeners();
   }
 }
+

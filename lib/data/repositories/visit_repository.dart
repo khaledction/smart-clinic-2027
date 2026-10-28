@@ -1,4 +1,4 @@
-import 'package:sqflite/sqflite.dart';
+﻿import 'package:sqflite/sqflite.dart';
 
 import '../../core/database/app_database.dart';
 import '../../core/utils/date_fmt.dart';
@@ -222,3 +222,4 @@ class VisitRepository {
     return rows.map(NeuroScale.fromMap).toList();
   }
 }
+

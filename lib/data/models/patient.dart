@@ -1,4 +1,4 @@
-import '../../core/utils/date_fmt.dart';
+﻿import '../../core/utils/date_fmt.dart';
 
 /// مريض في عيادة الأعصاب.
 class Patient {
@@ -235,3 +235,4 @@ class Medication {
     'is_active': isActive ? 1 : 0,
   };
 }
+

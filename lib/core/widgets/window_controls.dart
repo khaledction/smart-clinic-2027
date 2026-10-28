@@ -1,4 +1,4 @@
-import 'dart:io' show Platform;
+﻿import 'dart:io' show Platform;
 
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
@@ -148,7 +148,7 @@ class WindowAppName extends StatelessWidget {
       ClipRRect(
         borderRadius: BorderRadius.circular(5),
         child: Image.asset(
-          'assets/images/smart-clinic.png',
+          'assets/images/smart-clinic-2027.png',
           width: 18,
           height: 18,
           fit: BoxFit.cover,
@@ -309,7 +309,7 @@ class LoginWindowStrip extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(6),
                 child: Image.asset(
-                  'assets/images/smart-clinic.png',
+                  'assets/images/smart-clinic-2027.png',
                   width: 22,
                   height: 22,
                   fit: BoxFit.cover,
@@ -334,3 +334,5 @@ class LoginWindowStrip extends StatelessWidget {
     ),
   );
 }
+
+

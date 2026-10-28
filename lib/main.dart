@@ -1,4 +1,4 @@
-import 'dart:io' show Platform;
+﻿import 'dart:io' show Platform;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -9,6 +9,8 @@ import 'core/database/app_database.dart';
 import 'core/services/device_activation.dart';
 import 'core/services/app_folders.dart';
 import 'core/services/auto_backup.dart';
+import 'core/services/backup_scheduler.dart';
+import 'core/services/reminder_service.dart';
 import 'core/theme/app_theme.dart';
 import 'core/widgets/app_shell.dart';
 import 'core/widgets/frame_trail.dart';
@@ -80,6 +82,15 @@ Future<void> main() async {
   try {
     AutoBackup.start();
   } catch (_) {}
+  // لا تشغّل الخدمات المجدولة أثناء الاختبارات
+  if (Platform.environment['FLUTTER_TEST'] != 'true') {
+    try {
+      BackupScheduler.instance.start();
+    } catch (_) {}
+    try {
+      ReminderService.instance.start();
+    } catch (_) {}
+  }
 }
 
 class NeuroClinicApp extends StatelessWidget {
@@ -147,3 +158,4 @@ class _Root extends StatelessWidget {
     );
   }
 }
+

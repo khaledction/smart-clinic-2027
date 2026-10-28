@@ -1,4 +1,4 @@
-import 'package:sqflite/sqflite.dart';
+﻿import 'package:sqflite/sqflite.dart';
 
 /// ============================================================================
 ///  مخطط قاعدة البيانات — عيادة أعصاب
@@ -254,3 +254,4 @@ Future<void> migrate(Database db, int from, int to) async {
 Future<void> enableForeignKeys(Database db) async {
   await db.execute('PRAGMA foreign_keys = ON');
 }
+

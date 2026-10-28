@@ -1,4 +1,4 @@
-/// Accept Western, Arabic-Indic and Eastern Arabic digits, without inventing DOB.
+﻿/// Accept Western, Arabic-Indic and Eastern Arabic digits, without inventing DOB.
 String normalizeDigits(String value) {
   const western = '0123456789';
   const arabic = '٠١٢٣٤٥٦٧٨٩';
@@ -40,3 +40,4 @@ String? validateWeight(String? value) {
   }
   return null;
 }
+

@@ -1,4 +1,4 @@
-import '../../core/widgets/shell_nav.dart';
+﻿import '../../core/widgets/shell_nav.dart';
 import '../sessions/sessions_screen.dart';
 import '../../core/widgets/patient_link.dart';
 
@@ -473,3 +473,4 @@ class _TodayAppointmentsCard extends StatelessWidget {
           ),
   );
 }
+

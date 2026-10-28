@@ -1,4 +1,4 @@
-import 'package:sqflite/sqflite.dart';
+﻿import 'package:sqflite/sqflite.dart';
 
 import '../../core/database/app_database.dart';
 import '../../core/database/seed.dart';
@@ -68,3 +68,4 @@ class SettingsRepository {
     return result;
   }
 }
+

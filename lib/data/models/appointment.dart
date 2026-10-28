@@ -1,4 +1,4 @@
-import '../../core/utils/date_fmt.dart';
+﻿import '../../core/utils/date_fmt.dart';
 
 /// موعد في عيادة الأعصاب.
 class Appointment {
@@ -215,3 +215,4 @@ class Investigation {
     'created_at': createdAt?.toIso8601String(),
   };
 }
+

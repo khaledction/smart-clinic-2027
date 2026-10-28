@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 
 /// لوحة ألوان هادئة تناسب بيئة عيادة.
 class AppColors {
@@ -64,3 +64,4 @@ class AppColors {
     }
   }
 }
+

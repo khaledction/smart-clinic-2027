@@ -1,4 +1,4 @@
-import 'dart:io';
+﻿import 'dart:io';
 import 'dart:math';
 
 import 'package:bcrypt/bcrypt.dart';
@@ -197,3 +197,4 @@ Future<void> _openUri(Uri uri) async {
     await Process.start('xdg-open', [url]);
   }
 }
+
