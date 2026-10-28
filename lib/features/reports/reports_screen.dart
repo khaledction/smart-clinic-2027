@@ -1,4 +1,4 @@
-﻿import 'record_reports_screen.dart';
+import 'record_reports_screen.dart';
 
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -534,4 +534,3 @@ class _ReportsScreenState extends State<ReportsScreen> {
     );
   }
 }
-
