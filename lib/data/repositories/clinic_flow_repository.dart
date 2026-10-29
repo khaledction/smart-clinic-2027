@@ -171,7 +171,7 @@ class ClinicFlowRepository {
             await tx.insert('payments', {
               'patient_id': a.patientId,
               'visit_id': visitId,
-              'amount': fee,
+              'amount': 0,
               'category': 'consultation',
               'method': 'cash',
               'paid_at': null,
