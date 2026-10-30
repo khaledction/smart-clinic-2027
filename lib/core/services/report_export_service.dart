@@ -1,4 +1,4 @@
-﻿import 'dart:io';
+import 'dart:io';
 import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +10,7 @@ import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import '../../core/database/app_database.dart';
 
-/// V7 — تصدير التقارير PDF و Excel مع دعم العربية — مُصلح لـ excel 4.0.6
+/// V7 — تصدير PDF و Excel — إصلاح العربية والحفظ في المكان المختار
 class ReportExportService {
   static Future<void> exportDailyPdf(BuildContext context, DateTime day) async {
     try {
@@ -28,46 +28,68 @@ class ReportExportService {
       );
       final total = (payments.first['total'] as num?)?.toDouble() ?? 0.0;
 
-      pw.Font? arabicFont;
+      pw.Font? ttf;
+      pw.Font? ttfBold;
       try {
         final data = await rootBundle.load('assets/fonts/Cairo-Regular.ttf');
-        arabicFont = pw.Font.ttf(data);
+        final boldData = await rootBundle.load('assets/fonts/Cairo-Bold.ttf');
+        ttf = pw.Font.ttf(data);
+        ttfBold = pw.Font.ttf(boldData);
       } catch (_) {}
 
       final pdf = pw.Document();
       pdf.addPage(
         pw.Page(
-          theme: arabicFont != null ? pw.ThemeData.withFont(base: arabicFont) : null,
           pageFormat: PdfPageFormat.a4,
-          build: (ctx) => pw.Column(
-            crossAxisAlignment: pw.CrossAxisAlignment.start,
-            children: [
-              pw.Text('تقرير يومي - ${DateFormat('yyyy-MM-dd').format(day)}', style: pw.TextStyle(fontSize: 18, fontWeight: pw.FontWeight.bold)),
-              pw.SizedBox(height: 8),
-              pw.Text('عدد الزيارات: ${visits.length}  |  الإيرادات: $total ج.م', style: const pw.TextStyle(fontSize: 12)),
-              pw.SizedBox(height: 12),
-              pw.TableHelper.fromTextArray(
-                headers: ['المريض', 'التشخيص', 'التاريخ'],
-                data: visits.map((v) => [v['full_name'] ?? '-', v['diagnosis'] ?? '-', (v['visit_date'] as String).substring(0,10)]).toList(),
-                headerStyle: pw.TextStyle(fontWeight: pw.FontWeight.bold, color: PdfColors.white),
-                headerDecoration: const pw.BoxDecoration(color: PdfColors.blue900),
-                cellAlignment: pw.Alignment.centerRight,
-              ),
-            ],
+          // مهم للعربية
+          theme: ttf != null ? pw.ThemeData.withFont(base: ttf, bold: ttfBold ?? ttf) : null,
+          build: (ctx) => pw.Directionality(
+            textDirection: pw.TextDirection.rtl,
+            child: pw.Column(
+              crossAxisAlignment: pw.CrossAxisAlignment.stretch,
+              children: [
+                pw.Text('تقرير يومي - ${DateFormat('yyyy-MM-dd').format(day)}', style: pw.TextStyle(fontSize: 18, fontWeight: pw.FontWeight.bold), textAlign: pw.TextAlign.center),
+                pw.SizedBox(height: 8),
+                pw.Text('عدد الزيارات: ${visits.length}  |  الإيرادات: $total ج.م', style: const pw.TextStyle(fontSize: 12), textAlign: pw.TextAlign.center),
+                pw.SizedBox(height: 12),
+                pw.TableHelper.fromTextArray(
+                  headers: ['التاريخ', 'التشخيص', 'المريض'],
+                  data: visits.map((v) => [(v['visit_date'] as String).substring(0,10), v['diagnosis'] ?? '-', v['full_name'] ?? '-']).toList(),
+                  headerStyle: pw.TextStyle(fontWeight: pw.FontWeight.bold, color: PdfColors.white, fontSize: 10),
+                  headerDecoration: const pw.BoxDecoration(color: PdfColors.blue900),
+                  cellStyle: const pw.TextStyle(fontSize: 9),
+                  cellAlignment: pw.Alignment.center,
+                  headerAlignment: pw.Alignment.center,
+                ),
+              ],
+            ),
           ),
         ),
       );
 
       final bytes = await pdf.save();
-      final outPath = await FilePicker.platform.saveFile(
-        dialogTitle: 'حفظ تقرير PDF',
+
+      // احفظ حيث يختار المستخدم تماماً
+      String? outPath = await FilePicker.platform.saveFile(
+        dialogTitle: 'اختر مكان حفظ تقرير PDF',
         fileName: 'تقرير-${DateFormat('yyyy-MM-dd').format(day)}.pdf',
+        type: FileType.custom,
+        allowedExtensions: ['pdf'],
         bytes: bytes,
       );
-      if (outPath != null && context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('تم الحفظ: ${p.basename(outPath)}')));
-      } else if (outPath == null) {
-        await Printing.sharePdf(bytes: bytes, filename: 'report.pdf');
+
+      if (outPath != null) {
+        // FilePicker على Windows قد يعيد المسار بدون كتابة الملف، نكتبه يدوياً
+        final file = File(outPath);
+        if (!await file.exists() || await file.length() == 0) {
+          await file.writeAsBytes(bytes);
+        }
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('تم الحفظ في: $outPath')));
+        }
+      } else {
+        // المستخدم ألغى
+        if (context.mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('تم الإلغاء')));
       }
     } catch (e) {
       if (context.mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('خطأ التصدير: $e')));
@@ -87,7 +109,6 @@ class ReportExportService {
 
       final excel = Excel.createExcel();
       final sheet = excel['التقرير اليومي'];
-      // excel 4.0.6: استخدم TextCellValue
       sheet.appendRow(<CellValue>[TextCellValue('التاريخ'), TextCellValue('المريض'), TextCellValue('الهاتف'), TextCellValue('التشخيص'), TextCellValue('الخطة')]);
       for (final r in rows) {
         sheet.appendRow(<CellValue>[
@@ -102,23 +123,24 @@ class ReportExportService {
       final bytes = excel.save();
       if (bytes == null) throw Exception('فشل إنشاء Excel');
 
-      final outPath = await FilePicker.platform.saveFile(
-        dialogTitle: 'حفظ تقرير Excel',
+      String? outPath = await FilePicker.platform.saveFile(
+        dialogTitle: 'اختر مكان حفظ تقرير Excel',
         fileName: 'تقرير-${DateFormat('yyyy-MM-dd').format(day)}.xlsx',
+        type: FileType.custom,
+        allowedExtensions: ['xlsx'],
         bytes: Uint8List.fromList(bytes),
       );
-      if (outPath == null) {
-        final tmp = File('${Directory.systemTemp.path}/report-${DateTime.now().millisecondsSinceEpoch}.xlsx');
-        await tmp.writeAsBytes(bytes);
-        if (context.mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('تم الحفظ المؤقت: ${tmp.path}')));
-        return;
-      }
-      if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('تم الحفظ: ${p.basename(outPath)}')));
+      if (outPath != null) {
+        final file = File(outPath);
+        if (!await file.exists() || await file.length() == 0) {
+          await file.writeAsBytes(bytes);
+        }
+        if (context.mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('تم الحفظ في: $outPath')));
+      } else {
+        if (context.mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('تم الإلغاء')));
       }
     } catch (e) {
       if (context.mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('خطأ Excel: $e')));
     }
   }
 }
-

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 import '../../core/database/app_database.dart';
 import '../../core/theme/app_colors.dart';
@@ -62,6 +62,7 @@ class FinanceScreen extends StatefulWidget {
 
 class _FinanceScreenState extends State<FinanceScreen> {
   String category = 'consultation', query = '';
+  bool showUnpaid = false;
   final _search = TextEditingController();
 
   @override
@@ -77,10 +78,12 @@ class _FinanceScreenState extends State<FinanceScreen> {
   Future<List<Map<String, Object?>>> load() async =>
       (await AppDatabase.instance.database).rawQuery(
         '''SELECT x.*, p.full_name FROM payments x JOIN patients p ON p.id=x.patient_id
-    WHERE x.category=? AND p.full_name LIKE ? AND (? IS NULL OR date(x.paid_at)>=?) AND (? IS NULL OR date(x.paid_at)<=?) ORDER BY x.paid_at DESC,x.id DESC''',
+    WHERE x.category=? AND p.full_name LIKE ? AND ((? = 1 AND x.paid_at IS NULL) OR (? = 0 AND x.paid_at IS NOT NULL)) AND (? IS NULL OR date(x.paid_at)>=?) AND (? IS NULL OR date(x.paid_at)<=?) ORDER BY x.paid_at DESC,x.id DESC''',
         [
           category,
           '%$query%',
+          showUnpaid ? 1 : 0,
+          showUnpaid ? 1 : 0,
           range?.start.toIso8601String().substring(0, 10),
           range?.start.toIso8601String().substring(0, 10),
           range?.end.toIso8601String().substring(0, 10),
@@ -291,6 +294,7 @@ class _FinanceScreenState extends State<FinanceScreen> {
               );
             },
           ),
+          _FinanceTabs(category: category, showUnpaid: showUnpaid, onChanged: (c, u) { setState(() { category = c; showUnpaid = u; rows = load(); }); },),
           _paymentsToolbar(),
           const SizedBox(height: 4),
           const Text(
@@ -385,11 +389,9 @@ class _FinanceScreenState extends State<FinanceScreen> {
                                 subtitle: Text(
                                   '${DateFmt.parse(r['paid_at'] as String?) == null ? 'دون تاريخ' : DateFmt.dateTime(DateFmt.parse(r['paid_at'] as String?)!)} • ${r['service_label'] ?? r['note'] ?? 'دفعة يدوية'}',
                                 ),
-                                trailing: Text(
-                                  fmtMoney(r['amount']),
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                trailing: _AmountBadge(
+                                  amount: (r['amount'] as num?)?.toDouble() ?? 0,
+                                  paidAt: r['paid_at'] as String?,
                                 ),
                               ),
                             ),
@@ -586,5 +588,24 @@ class _FinanceScreenState extends State<FinanceScreen> {
     ),
     child: Text('$label: $value', style: const TextStyle(fontSize: 12.5)),
   );
+}
+
+class _AmountBadge extends StatelessWidget {
+  const _AmountBadge({required this.amount, this.paidAt});
+  final double amount;
+  final String? paidAt;
+  @override
+  Widget build(BuildContext context) {
+    final isPaid = paidAt != null && amount > 0;
+    final isFree = amount == 0 && paidAt == null;
+    final bg = isPaid ? const Color(0xFFE6F4EA) : const Color(0xFFFCE8E6);
+    final fg = isPaid ? const Color(0xFF137333) : const Color(0xFFB3261E);
+    final text = isFree ? 'بلا أجر' : '${amount.toInt()} ج.م';
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+      decoration: BoxDecoration(color: bg, borderRadius: BorderRadius.circular(20)),
+      child: Text(text, style: TextStyle(color: fg, fontWeight: FontWeight.w800, fontSize: 14.5)),
+    );
+  }
 }
 

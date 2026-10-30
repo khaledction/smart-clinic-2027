@@ -235,7 +235,7 @@ class _ActivationScreenState extends State<ActivationScreen> {
                     // ========================================================
                     if (isExpired && !isTampered) ...[
                       const SizedBox(height: 16),
-                      _AlertBanner(
+                      const _AlertBanner(
                         color: AppColors.danger,
                         icon: Icons.timer_off_outlined,
                         title: 'انتهت مدة الترخيص السابقة لهذا الجهاز',
@@ -902,5 +902,6 @@ class _AlertBanner extends StatelessWidget {
     );
   }
 }
+
 
 
